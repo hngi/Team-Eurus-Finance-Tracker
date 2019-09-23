@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>team eurus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="ui">
+        <div  class="ui_sidebar">
+            <div class="ui_select">
+                <ul class="ui_list">
+                    <li class="ui_list-item">Week</li>
+                    <li class="ui_list-item">Month</li>
+                    <li class="ui_list-item">Year</li>
+                </ul>
+            </div>
+    
+            <div class="expense-form">
+                <form class="expense-form_main"> 
+                    <input class="expense_name expense_inp" placeholder="the name of your expense" type="text"/>
+                    <input class="expense_amount expense_inp" placeholder="the amount of your expense" type='number'/>
+
+                    <span class="errMessage"></span>
+                    <button class="btn expense_submit" type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="ui_main">
+            <h3>Your expenditure</h3>
+        </div>
+      </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
