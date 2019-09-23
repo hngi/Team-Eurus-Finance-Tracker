@@ -33,7 +33,7 @@
     background: rgb(54, 54, 126);
     color: white;
 }
-.ui_list-item:checked{
+.ui_list-item:visited{
     background: rgb(54, 54, 126);
     color: white;
 }

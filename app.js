@@ -4,7 +4,7 @@ class UI {
         this.name = document.querySelector('.expense_name')
         this.err = document.querySelector('.errMessage')
     }
-
+    
     submitForm = () => {
         const inp_amount = this.amount.value
         const inp_name = this.name.value
@@ -25,13 +25,17 @@ class UI {
 
 const eventListeners = () => {
     const formSubmit = document.querySelector('.expense-form_main')
-
+    let list_items = document.querySelectorAll('.ui_list-item')
+    
     const ui = new UI()
-
+    
     formSubmit.addEventListener('submit', e => {
         e.preventDefault()
         ui.submitForm()
     })
+    list_items.addEventListener('click', (() =>{
+        
+    }))
 }
 
 document.addEventListener('DOMContentLoaded', () => {
