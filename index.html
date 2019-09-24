@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>team eurus</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
     <div class="ui">
-        <div  class="ui_sidebar">
-            <div id="myDIV" class="myDIV">
+        <div class="ui_sidebar">
+            <!-- <div id="myDIV" class="myDIV">
                 <button class="btn active">Week</button>
                 <button class="btn">Month</button>
                 <button class="btn">Year</button>    
-            </div>
+            </div> -->
 
-    
+
             <div class="expense-form">
-                <form class="expense-form_main"> 
-                    <input class="expense_name expense_inp" placeholder="the name of your expense" type="text"/>
-                    <input class="expense_amount expense_inp" placeholder="the amount of your expense" type='number'/>
+                <form class="expense-form_main">
+                    <input class="expense_name expense_inp" placeholder="the name of your expense" type="text" />
+                    <input class="expense_amount expense_inp" placeholder="the amount of your expense" type='number' />
 
                     <span class="errMessage"></span>
                     <button class="btn expense_submit" type="submit">submit</button>
@@ -33,26 +33,66 @@
             </div>
         </div>
         <div class="ui_main">
-            <div>
-               <table class="table" id="mytab">
-                   <tr>
-                       <th>Days</th>
-                       <th>expense title</th>
-                       <th>expense amount</th>
-                   </tr>
-                   <tr>
-                       <td>day 1</td>
-                       <td>bought shoes</td>
-                       <td>$100</td>
-                   </tr>   
-               </table>
-            </div>
-            <div>
-                <p>Your total expenditure is: </p>
+            <div class="section-tours" id="section-tours">
+                <div class="u-center-text">
+                    <h2 class="heading-secondary u-margin-bottom-big">
+                        your expenditure
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--1">
+                                <div class="card__picture card__picture--1">
+                                    &nbsp;
+                                </div>
+                                <p class="card__text card__text-1 ">This week</p>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-1">₦1,950.00</span>
+                                </h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--2">
+                                <div class="card__picture card__picture--2">
+                                    &nbsp;
+                                </div>
+                                <p class="card__text card__text-2">This month</p>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-2">₦6,950.00</span>
+                                </h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--3">
+                                <div class="card__picture card__picture--3">
+                                    &nbsp;
+                                </div>
+                                <p class="card__text card__text-3">This year</p>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-3">₦50,050.00</span>
+                                </h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-      </div>
-      
+    </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 
