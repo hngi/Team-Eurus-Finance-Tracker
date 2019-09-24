@@ -1,0 +1,137 @@
+.card{
+   
+    position: relative;
+    height: 10rem;
+    width: 15rem;
+
+    
+    &__side{
+        height: 10rem;
+        cursor: pointer;
+        background: #EDEDED;
+        transition: all .5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        backface-visibility: hidden;
+        width: 100%;
+        box-shadow: $box-shadow;
+        border-radius: .5rem;
+        
+        &--1{
+            border-bottom: 10px solid #59A78F;
+        }
+        &--2{
+            border-bottom: 10px solid #2C7EA0;
+        }
+        &--3{
+            border-bottom: 10px solid #A75991;
+        }
+    }
+    
+    //FRONT SIDE STYLING
+    &__picture{
+        height: 20rem;
+        background-blend-mode: screen;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+        
+        
+
+
+        &--1{
+        
+         background-position: bottom;
+         background-size: 150%;
+         background-repeat: no-repeat;
+        }
+        &--2{
+        
+         background-position: center;
+         background-size: 100%;
+         background-repeat: no-repeat;
+        }
+        &--3{
+        
+         background-position: center;
+         background-size: 180%;
+         background-repeat: no-repeat;
+        }
+    }
+
+    &__heading{
+        color: $color-white;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: right;
+        text-transform: uppercase;
+        position: absolute;
+        top: 3rem;
+        right: 2rem;
+    }
+
+    &__text{
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: .5rem 1rem;
+        padding-right: 3rem;
+        border-radius: 0px 15px 15px 0px;
+
+        &-1{
+            background: #59A78F;
+        }
+        &-2{
+            background: #2C7EA0;
+        }
+        &-3{
+            background: #A75991;
+        }
+
+
+    }
+
+    &__heading--span{
+        padding: .7rem 1.5rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        font-size: 36px;
+        color: black;
+
+        &-1{
+          
+            width: 60%;
+        }
+        &-2{
+            width: 60%;
+        }
+        &-3{
+            width: 60%;
+        }
+    }
+
+    &__details{
+        padding: 2rem;
+
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            
+
+            li{
+                text-align: center;
+                font-size: 1.2rem;
+                padding: .5rem;
+                color: lighten(black, 50%);
+
+                &:not(:last-child){
+                    padding-bottom: 1px solid #eee;
+                }
+            }
+        }
+    }
+}
