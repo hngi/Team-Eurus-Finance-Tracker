@@ -7251,3 +7251,8 @@ input {
   line-height: 40px;
   background: #ffffff !important;
   border-radius: 25px !important; }
+
+.uk-offcanvas-bar a {
+  color: #50906E; }
+  .uk-offcanvas-bar a:hover {
+    color: #3a6950; }

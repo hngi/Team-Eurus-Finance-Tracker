@@ -99,7 +99,7 @@
                 </form>
             </div>
             <div>
-                <h4 class="uk-text-bold uk-margin-remove-bottom">Create Your Account</h4>
+                <h4 class="uk-text-bold uk-margin-remove-bottom">Already have an account? <a href="#" uk-toggle="target: #login">Login</a></h4>
             </div>
         </div>
     </div>
@@ -111,13 +111,52 @@
         <div class="uk-offcanvas-bar">
     
             <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <h3 class="uk-text-bold uk-margin-remove-top">Login to Your Account</h3>
+            <div class=" uk-width-1-1@s ">
+                <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
     
-            <h3>Title</h3>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="fname">Full Name</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="fname" type="text" placeholder="John Wick">
+                        </div>
+                    </div>
     
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.</p>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="uname">Username</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="uname" type="text" placeholder="endgame">
+                        </div>
+                    </div>
     
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="email">Email</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="email" type="email" placeholder="a@b.c">
+                        </div>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="pword">Password</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="pword" type="password" placeholder="**************">
+                        </div>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="pass2">Confirm Password</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="pass2" type="password" placeholder="****************">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <button class="uk-button uk-button-theme uk-width-1-1@s">Sign up</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h4 class="uk-text-bold uk-margin-remove-bottom">Don’t have an account? <a href="#" uk-toggle="target: #sign-up">Sign up</a></h4>
+            </div>
         </div>
     </div>
     <!--Code for login-->
