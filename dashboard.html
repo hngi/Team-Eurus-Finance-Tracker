@@ -8,33 +8,61 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="favicon" href="./assets/logo.svg">
-    <link rel="apple-touch-icon" href="./assets/favicon.png">
-    <link href="./assets/favicon.png" rel="icon">
-    <link rel="apple-touch-icon" href="./assets/favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="./assets/favicon.png">
-</head>
+    <link rel="apple-touch-icon" href="./assets/favicon.svg">
+    <link href="./assets/favicon.svg" rel="icon">
+    <link rel="apple-touch-icon" href="./assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="167x167" href="./assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
 <body>
 <!--Preloader-->
 <div id="introLoader" class="introloader">
     <div class="loader-container">
         <div class="spinner">
-            <img src="assets/img/logo.png" alt="">
+            <img src="assets/logo.svg" alt="">
         </div>
     </div>
 </div>
-<div id="particles-js" class="uk-position-fixed"></div>
+<div id="particles-js" class="uk-position-fixed" hidden></div>
 <section>
-    <nav class="uk-flex uk-flex-between uk-padding uk-flex-middle uk-position-z-index">
+    <div class="sidebar">
         <div>
-            <img src="./assets/logo.svg" alt="">
+            <div class="logo">
+                <img src="./assets/logo.svg" alt="">
+            </div>
+            <div class="links">
+                <div class="active">
+                    <a href="">Summary</a>
+                </div>
+                <div>
+                    <a href="">Expenditure</a>
+                </div>
+                <div>
+                    <a href="">Categories</a>
+                </div>
+                <div>
+                    <a href="">Settings</a>
+                </div>
+            </div>
         </div>
         <div>
-            <button class="uk-button uk-button-theme-light" uk-toggle="target: #login">Login</button>
-            <button class="uk-button uk-button-theme uk-margin-medium-left" uk-toggle="target: #sign-up">Sign up</button>
+            <div class="avatar-details">
+                <div class="avatar">
+                    <img src="./assets/avatar.png" alt="">
+                </div>
+                <div class="details">
+                    <h3 class="uk-text-bold">Sean Paul</h3>
+                </div>
+            </div>
+            <div class="links logout">
+                <div>
+                    <a href="">Logout</a>
+                </div>
+            </div>
         </div>
-    </nav>    
+    </div>    
+
 </section>
 
 <script src="assets/js/app.js"></script>
