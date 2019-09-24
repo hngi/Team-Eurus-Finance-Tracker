@@ -16305,7 +16305,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
     }, {
       name: "beforeitemshow",
       handler: function handler(t) {
-        this.isToggled() || (this.draggable = !1, t.preventDefault(), this.toggleNow(this.$el, !0), this.animation = Mr.scale, Ce(t.target, this.clsActive), this.stack.splice(1, 0, this.index));
+        this.isToggled() || (this.draggable = !1, t.preventDefault(), this.toggleNow(this.$el, !0), this.animation = Mr.scale, Ce(t.target, this.clsActive), this.stack.splice(1, 0, this.landingpage));
       }
     }, {
       name: "itemshow",
@@ -16373,12 +16373,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
     }],
     methods: {
       loadItem: function loadItem(t) {
-        void 0 === t && (t = this.index);
+        void 0 === t && (t = this.landingpage);
         var e = this.getItem(t);
         e.content || Bt(this.$el, "itemload", [e]);
       },
       getItem: function getItem(t) {
-        return void 0 === t && (t = this.index), this.items[t] || {};
+        return void 0 === t && (t = this.landingpage), this.items[t] || {};
       },
       setItem: function setItem(t, e) {
         X(t, {
@@ -16815,7 +16815,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
       write: function write() {
         if (!this.stack.length && !this.dragging) {
           var t = this.getValidIndex();
-          delete this.index, Ce(this.slides, this.clsActive, this.clsActivated), this.show(t);
+          delete this.landingpage, Ce(this.slides, this.clsActive, this.clsActivated), this.show(t);
         }
       },
       events: ["resize"]

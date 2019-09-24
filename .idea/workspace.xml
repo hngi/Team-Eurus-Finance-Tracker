@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c60f443e-ba8d-4644-b5b9-038b1651a3bf" name="Default Changelist" comment="" />
+    <list default="true" id="c60f443e-ba8d-4644-b5b9-038b1651a3bf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/_home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
