@@ -11,36 +11,34 @@
     margin-top: 1rem;
 }
 
-.ui_list{
-    text-decoration: none;
-    list-style: none;
+.myDIV{
     display: flex;
-    width: 30%;
-    justify-content: space-evenly;
     flex-direction: column;
-    align-items: stretch;
+    width: 50%;
+   margin-left: 1rem;
 }
 
-.ui_list-item{
-    padding: 1rem 0 1rem 3.4rem;
+.btn{
+    padding: 1rem 2rem;
     border: 1px solid black;
-    width: 100%;
     cursor: pointer;
     margin-bottom: 1rem;
 }
 
-.ui_list-item:hover{
-    background: rgb(54, 54, 126);
-    color: white;
-}
-.ui_list-item:visited{
+.active,
+.ui_btn:hover{
     background: rgb(54, 54, 126);
     color: white;
 }
 
+
 .expense-form{
     width: 50%;
     margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .expense-form_main{
     display: flex;
@@ -82,4 +80,19 @@ th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active,
+.btn:hover {
+    background-color: #666;
+    color: white;
 }

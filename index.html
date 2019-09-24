@@ -12,13 +12,12 @@
 <body>
     <div class="ui">
         <div  class="ui_sidebar">
-            <div class="ui_select">
-                <ul class="ui_list">
-                    <li class="ui_list-item"> Week</li>
-                    <li class="ui_list-item">Month</li>
-                    <li class="ui_list-item">Year</li>
-                </ul>
+            <div id="myDIV" class="myDIV">
+                <button class="btn active">Week</button>
+                <button class="btn">Month</button>
+                <button class="btn">Year</button>    
             </div>
+
     
             <div class="expense-form">
                 <form class="expense-form_main"> 
@@ -28,11 +27,14 @@
                     <span class="errMessage"></span>
                     <button class="btn expense_submit" type="submit">submit</button>
                 </form>
+                <button class="btn btn-cal">
+                    calculate
+                </button>
             </div>
         </div>
         <div class="ui_main">
             <div>
-               <table>
+               <table class="table" id="mytab">
                    <tr>
                        <th>Days</th>
                        <th>expense title</th>
@@ -50,6 +52,7 @@
             </div>
         </div>
       </div>
+      
     <script src="app.js"></script>
 </body>
 

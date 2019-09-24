@@ -4,7 +4,7 @@ class UI {
         this.name = document.querySelector('.expense_name')
         this.err = document.querySelector('.errMessage')
     }
-    
+
     submitForm = () => {
         const inp_amount = this.amount.value
         const inp_name = this.name.value
@@ -25,17 +25,31 @@ class UI {
 
 const eventListeners = () => {
     const formSubmit = document.querySelector('.expense-form_main')
-    let list_items = document.querySelectorAll('.ui_list-item')
-    
+    const header = document.getElementById('myDIV')
+    const btns = header.getElementsByClassName('btn')
+    const table = document.getElementById('mytab')
+
     const ui = new UI()
-    
+
     formSubmit.addEventListener('submit', e => {
         e.preventDefault()
         ui.submitForm()
     })
-    list_items.addEventListener('click', (() =>{
-        
-    }))
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function() {
+            var current = document.getElementsByClassName('active')
+            current[0].className = current[0].className.replace(' active', '')
+            this.className += ' active'
+        })
+    }
+
+    for (var i = 0, row; (row = table.rows[i]); i++) {
+        //iterate through rows
+        //rows would be accessed using the "row" variable assigned in the for loop
+        console.log(row.length)
+    }
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {
