@@ -1,0 +1,85 @@
+.ui{
+    display: flex;
+}
+
+.ui_sidebar{
+    flex-basis: 40%
+}
+
+.ui_main{
+    flex-basis: 50%;
+    margin-top: 1rem;
+}
+
+.ui_list{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.ui_list-item{
+    padding: 1rem 0 1rem 3.4rem;
+    border: 1px solid black;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.ui_list-item:hover{
+    background: rgb(54, 54, 126);
+    color: white;
+}
+.ui_list-item:visited{
+    background: rgb(54, 54, 126);
+    color: white;
+}
+
+.expense-form{
+    width: 50%;
+    margin-left: 1rem;
+}
+.expense-form_main{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.expense_inp{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.btn{
+    cursor: pointer;
+    padding: .5rem 1rem;
+}
+
+.errMessage{
+    display: none;
+}
+.errMessage_show{
+    display: block;
+    color: red;
+    text-align: center;
+    padding: .2rem .5rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
