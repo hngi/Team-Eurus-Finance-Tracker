@@ -61,61 +61,80 @@
                 </div>
             </div>
         </div>
-    </div>    <div class="ui uk-padding-small">
+    </div>
+
+    <div class="ui uk-padding-small">
     <div class="ui_main">
         <div class="section-tours" id="section-tours">
             <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
                 <h4 class="uk-margin-remove">
-
+                    &nbsp;
                 </h4>
                 <h2 class="uk-text-bold uk-margin-remove ">
                     Categories
                 </h2>
             </div>
+            <div class="uk-height-1-1 dash-content">
+                <div class="uk-width-1-1@s uk-overflow-auto categories-item">
+                    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                        <thead>
+                        <tr>
+                            <th class="uk-width-small">S/N</th>
+                            <th>Name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Carrots</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pineapples</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Mangos</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Berries</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Cherries</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-            <!--            <div>-->
-            <!--                <h2 class="categories-header">Categories</h2>-->
-            <!--            </div>-->
-            <div class="categories-item-container">
-                <section class="categories-item">
-                    <ul>
-                        <li>
-                            <span>S/N</span>
-                            <span>Name</span>
-                        </li>
-
-                        <li>
-                            <span>1</span>
-                            <span>Carrot</span>
-                        </li>
-
-                        <li>
-                            <span>2</span>
-                            <span>Pineapple</span>
-                        </li>
-
-                        <li>
-                            <span>3</span>
-                            <span>Mango</span>
-                        </li>
-
-                        <li>
-                            <span>4</span>
-                            <span>Sugarcane</span>
-                        </li>
-
-                        <li>
-                            <span>5</span>
-                            <span>Berry</span>
-                        </li>
-                    </ul>
-
-                    <button class="categories-item-button">Add Category</button>
-                </section>
+                    <div class="uk-margin">
+                        <button class="uk-button uk-button-theme categories-button" uk-toggle="target: #category">Add Category</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+    <div id="category" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+            <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="ename">Name</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="ename" type="text" placeholder="Name">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-theme categories-button">Add Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 
 </section>
 
