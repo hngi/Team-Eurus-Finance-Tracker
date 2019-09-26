@@ -47,17 +47,10 @@
             </div>
         </div>
         <div>
-            <div class="avatar-details">
-                <div class="avatar">
-                    <img src="./assets/avatar.png" alt="">
-                </div>
-                <div class="details">
-                    <h3 class="uk-text-bold">Sean Paul</h3>
-                </div>
-            </div>
+            
             <div class="links logout">
                 <div>
-                    <a href="">Logout</a>
+                    <a href="logout">Logout</a>
                 </div>
             </div>
         </div>

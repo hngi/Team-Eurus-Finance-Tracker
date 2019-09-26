@@ -55,14 +55,25 @@
                 <div class="details">
                     <h3 class="uk-text-bold">Sean Paul</h3>
                 </div>
+<<<<<<< HEAD:dashboard.php
+            </div> --> 
+            <div class="links logout">
+                <div>
+                <a href="logout">Logout</a>
+=======
             </div>
         </nav>    <div class="uk-flex uk-flex-wrap uk-flex-middle viewport">
             <div class="uk-width-1-3@m uk-padding">
                 <div>
+<<<<<<< HEAD:dashboard.html
                     <h2 class="uk-text-bold">A Simple Task</h2>
                     <p>Ever wondered what black hole your money goes into? With Eurus Wallet, you can track your spending
                         easily.</p>
                     <button class="uk-button uk-button-theme">Try EurusWallet</button>
+=======
+                    <a href="">Logout</a>
+>>>>>>> master:dashboard.html
+>>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
                 </div>
             </div>
         </div>
@@ -223,6 +234,7 @@
     <div id="login" uk-offcanvas="mode: reveal; overlay: true">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
+<<<<<<< HEAD:dashboard.html
             <!--@pennywise-->
             <h3 class="uk-text-bold uk-margin-remove-top">Login to Your Account</h3>
             <div class=" uk-width-1-1@s ">
@@ -231,6 +243,52 @@
                         <label class="uk-form-label" for="euname">Username or Email</label>
                         <div class="uk-form-controls">
                             <input class="uk-input" id="euname" type="text" placeholder="endgame">
+=======
+            <div class="canvas">
+                <div>
+                    <div class="logo">
+                        <img src="./assets/logo.svg" alt="">
+                    </div>
+                    <div class="links">
+<<<<<<< HEAD:dashboard.php
+                         <div>
+                        <a href="expenditure">Add Expenditure</a>
+                    </div>    
+                 <!--    <div class="active">
+                            <a href="">Summary</a>
+                        </div>
+                        
+=======
+                        <div class="active">
+                            <a href="">Summary</a>
+                        </div>
+                        <div>
+                            <a href="">Expenditure</a>
+                        </div>
+>>>>>>> master:dashboard.html
+                        <div>
+                            <a href="">Categories</a>
+                        </div>
+                        <div>
+                            <a href="">Settings</a>
+<<<<<<< HEAD:dashboard.php
+                        </div> --> 
+                    </div>
+                </div>
+                <div>
+                    <!-- <div class="avatar-details">
+                <div class="avatar">
+                    <img src="./assets/avatar.png" alt="">
+                </div>
+                <div class="details">
+                    <h3 class="uk-text-bold">Sean Paul</h3>
+                </div>
+            </div> --> 
+                    <div class="links logout">
+                        <div>
+                            <a href="logout">Logout</a>
+=======
+>>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
                         </div>
                     </div>
     
@@ -240,8 +298,16 @@
                             <input class="uk-input" id="password" type="password" placeholder="**************">
                         </div>
                     </div>
+<<<<<<< HEAD:dashboard.html
                     <div class="uk-margin">
                         <button class="uk-button uk-button-theme uk-width-1-1@s">Login</button>
+=======
+                    <div class="links logout">
+                        <div>
+                            <a href="">Logout</a>
+>>>>>>> master:dashboard.html
+                        </div>
+>>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
                     </div>
                 </form>
             </div>
@@ -255,5 +321,22 @@
 </section>
 
 <script src="assets/js/app.js"></script>
+<<<<<<< HEAD:dashboard.php
+<script>
+  function logout()
+  {
+    window.location = "logout";
+        
+  }
+  </script>
+  <?php
+    }
+    else{
+        echo("<script>location.href = 'index';</script>");
+        header("location: index");
+    }
+    ?>
+=======
+>>>>>>> master:dashboard.html
 </body>
 </html>

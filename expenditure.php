@@ -33,10 +33,10 @@
                 <img src="./assets/logo.svg" alt="">
             </div>
             <div class="links">
-                <div class="active">
-                    <a href="/Team-Eurus-Finance-Tracker/dashboard.html">Summary</a>
+               <div class="active">
+                    <a href="dashboard">Dashboard</a>
                 </div>
-                <div>
+                <!--  <div>
                     <a href="/Team-Eurus-Finance-Tracker/expenditure.html">Expenditure</a>
                 </div>
                 <div>
@@ -44,21 +44,14 @@
                 </div>
                 <div>
                     <a href="">Settings</a>
-                </div>
+                </div> --->
             </div>
         </div>
         <div>
-            <div class="avatar-details">
-                <div class="avatar">
-                    <img src="./assets/avatar.png" alt="">
-                </div>
-                <div class="details">
-                    <h3 class="uk-text-bold">Sean Paul</h3>
-                </div>
-            </div>
+           
             <div class="links logout">
                 <div>
-                    <a href="">Logout</a>
+                    <a href="logout">Logout</a>
                 </div>
             </div>
         </div>
@@ -127,30 +120,25 @@
     
             <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="euname">Username or Email</label>
+                    <label class="uk-form-label" for="euname">ITEM</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="euname" type="text" placeholder="endgame">
+                        <input class="uk-input" style="color: black;" id="euname" type="text" placeholder="Add item">
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="euname">Username or Email</label>
+                    <label class="uk-form-label" for="euname">AMOUNT</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="euname" type="text" placeholder="endgame">
+                        <input class="uk-input"  style="color: black;" id="euname" type="text" placeholder="Add amount">
                     </div>
                 </div>
     
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="password">Password</label>
+                    <label class="uk-form-label" for="password">DESCRIPTION</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="password" type="password" placeholder="**************">
+                        <input class="uk-input" style="color: black;" id="password" type="password" placeholder="Add item description">
                     </div>
                 </div>
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="password">Password</label>
-                    <div class="uk-form-controls">
-                        <textarea class="uk-width-1-1@s" name="" id="" rows="10"></textarea>
-                    </div>
-                </div>
+               
                 <div class="uk-margin">
                     <button class="uk-button uk-button-theme uk-width-1-1@s">Add Expenditure</button>
                 </div>
@@ -182,17 +170,10 @@
                     </div>
                 </div>
                 <div>
-                    <div class="avatar-details">
-                        <div class="avatar">
-                            <img src="./assets/avatar.png" alt="">
-                        </div>
-                        <div class="details">
-                            <h3 class="uk-text-bold">Sean Paul</h3>
-                        </div>
-                    </div>
+                   
                     <div class="links logout">
                         <div>
-                            <a href="">Logout</a>
+                            <a href="logout">Logout</a>
                         </div>
                     </div>
                 </div>
