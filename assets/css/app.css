@@ -216,7 +216,7 @@ tr:nth-child(even) {
 .card__side {
   height: 100%;
   cursor: pointer;
-  background: #EDEDED url(../bag.png) no-repeat;
+  background: #EDEDED url(../images/bag.png) no-repeat;
   background-position: 120% 50%;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -7448,12 +7448,12 @@ header {
   width: 100%; }
   @media (max-width: 959px) {
     header {
-      background: url(../bg-no-svg.png) no-repeat;
+      background: url(../images/bg-no-svg.png) no-repeat;
       background-size: cover; } }
   header .viewport {
     height: 100vh; }
   header .bgdiv {
-    background: url(../bgee.png) no-repeat;
+    background: url(../images/bgee.png) no-repeat;
     background-size: cover;
     height: 100vh; }
     @media (max-width: 959px) {
