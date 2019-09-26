@@ -1,3 +1,4 @@
+<<<<<<< HEAD:dashboard.php
 <?php 
 session_start();
 
@@ -29,6 +30,8 @@ if(isset($_SESSION['ID'])){
   }
 
 ?>
+=======
+>>>>>>> master:dashboard.html
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -64,6 +67,7 @@ if(isset($_SESSION['ID'])){
                 <img src="./assets/logo.svg" alt="">
             </div>
             <div class="links">
+<<<<<<< HEAD:dashboard.php
             <div>
                     <a href="expenditure">Add Expenditure</a>
                 </div>    
@@ -88,16 +92,41 @@ if(isset($_SESSION['ID'])){
 
         <div>
           <!-- <div class="avatar-details">
+=======
+                <div class="active">
+                    <a href="/Team-Eurus-Finance-Tracker/dashboard.html">Summary</a>
+                </div>
+                <div>
+                    <a href="/Team-Eurus-Finance-Tracker/expenditure.html">Expenditure</a>
+                </div>
+                <div>
+                    <a href="/Team-Eurus-Finance-Tracker/categories.html">Categories</a>
+                </div>
+                <div>
+                    <a href="">Settings</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="avatar-details">
+>>>>>>> master:dashboard.html
                 <div class="avatar">
                     <img src="./assets/avatar.png" alt="">
                 </div>
                 <div class="details">
                     <h3 class="uk-text-bold">Sean Paul</h3>
                 </div>
+<<<<<<< HEAD:dashboard.php
             </div> --> 
             <div class="links logout">
                 <div>
                 <a href="logout">Logout</a>
+=======
+            </div>
+            <div class="links logout">
+                <div>
+                    <a href="">Logout</a>
+>>>>>>> master:dashboard.html
                 </div>
             </div>
         </div>
@@ -241,6 +270,7 @@ if(isset($_SESSION['ID'])){
                         <img src="./assets/logo.svg" alt="">
                     </div>
                     <div class="links">
+<<<<<<< HEAD:dashboard.php
                          <div>
                         <a href="expenditure">Add Expenditure</a>
                     </div>    
@@ -248,11 +278,20 @@ if(isset($_SESSION['ID'])){
                             <a href="">Summary</a>
                         </div>
                         
+=======
+                        <div class="active">
+                            <a href="">Summary</a>
+                        </div>
+                        <div>
+                            <a href="">Expenditure</a>
+                        </div>
+>>>>>>> master:dashboard.html
                         <div>
                             <a href="">Categories</a>
                         </div>
                         <div>
                             <a href="">Settings</a>
+<<<<<<< HEAD:dashboard.php
                         </div> --> 
                     </div>
                 </div>
@@ -268,6 +307,23 @@ if(isset($_SESSION['ID'])){
                     <div class="links logout">
                         <div>
                             <a href="logout">Logout</a>
+=======
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="avatar-details">
+                        <div class="avatar">
+                            <img src="./assets/avatar.png" alt="">
+                        </div>
+                        <div class="details">
+                            <h3 class="uk-text-bold">Sean Paul</h3>
+                        </div>
+                    </div>
+                    <div class="links logout">
+                        <div>
+                            <a href="">Logout</a>
+>>>>>>> master:dashboard.html
                         </div>
                     </div>
                 </div>
@@ -277,6 +333,7 @@ if(isset($_SESSION['ID'])){
 </section>
 
 <script src="assets/js/app.js"></script>
+<<<<<<< HEAD:dashboard.php
 <script>
   function logout()
   {
@@ -291,5 +348,7 @@ if(isset($_SESSION['ID'])){
         header("location: index");
     }
     ?>
+=======
+>>>>>>> master:dashboard.html
 </body>
 </html>
