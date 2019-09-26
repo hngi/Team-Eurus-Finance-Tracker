@@ -7668,3 +7668,54 @@ input {
 
 .pr-20px {
   padding-right: 20px; }
+
+.categories-header{
+  font-weight: bold;
+  font-size: 31px;
+  float: right;
+  line-height: 42px;
+}
+
+.categories-item-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 170px;
+}
+
+.categories-item{
+  max-width: 100%;
+  width: 300px;
+}
+
+.categories-item li{
+  border-bottom: 1px solid #929292;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+}
+
+.categories-item li span{
+  flex: 1;
+}
+
+.categories-item ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categories-item-button{
+  color: #ffffff;
+  background-color: #41836F;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.categories-item-button:focus {
+  outline:0;
+}
