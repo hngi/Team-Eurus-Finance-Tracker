@@ -76,12 +76,12 @@ if ($userData['STATUS'] === 'FAILURE') {
                 </div>
             </div>
         </div>
-        <div>
+        <!--<div>
             <h2>USER DETAILS</h2>
             <h3></h3>
-            <p>Your email address is: <?php echo $email; ?></p>
-            <p>Your date of registration is: <?php echo $regDate; ?></p>
-        </div>
+            <p>Your email address is: <?php /*echo $email; */?></p>
+            <p>Your date of registration is: <?php /*echo $regDate; */?></p>
+        </div>-->
 
         <div>
             <div class="avatar-details">
