@@ -7668,3 +7668,7 @@ input {
 
 .pr-20px {
   padding-right: 20px; }
+
+#img-btn {
+  padding: 0!important;
+}
