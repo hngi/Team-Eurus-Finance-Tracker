@@ -7,6 +7,7 @@ include "./includes/db.php"; ?>
 
 if(isset($_POST['login'])) {
 
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -23,8 +24,8 @@ if(isset($_POST['login'])) {
 
     while($row = mysqli_fetch_array($select_user_query)) {
 
-         $email = $row['email'];
-         $password = $row['password'];
+         $db_email = $row['email'];
+         $db_password = $row['password'];
 
     }
 
@@ -33,6 +34,7 @@ if(isset($_POST['login'])) {
         header("location: dashboard.php");
     } 
 
+    
 
    
 
@@ -52,8 +54,8 @@ if(isset($_POST['login'])) {
 <body>
                
 
-                <div class="form-signup">
-                <h1>Create your account</h1>
+                <div class="login">
+                <h1>Login into your account</h1>
                     <form action="#" method="POST">
                         
                         <input type="email" placeholder="Email" name="email" required>
