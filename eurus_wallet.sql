@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2019 at 07:48 AM
+-- Generation Time: Sep 26, 2019 at 06:22 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -30,8 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(3) NOT NULL,
-  `fullname` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `middlename` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,14 +41,19 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `username`, `email`, `password`) VALUES
-(1, 'new user', 'usera', 'usera@yahoo.com', '123'),
-(2, 'bayo adeyemo', '', '{email}', '{password}'),
-(3, 'bayo adeyemo', '', '{email}', '{password}'),
-(4, 'john james', 'jjames', '{email}', '{password}'),
-(5, 'jonni', 'jonn1', '{email}', '{password}'),
-(6, 'nenene', 'nene', '{email}', '{password}'),
-(7, 'bayo adeyemo', 'admin1', 'info@jidetaiwoandco.com', '123');
+INSERT INTO `users` (`id`, `firstname`, `middlename`, `lastname`, `email`, `password`) VALUES
+(1, 'new user', 'usera', '', 'usera@yahoo.com', '123'),
+(2, 'bayo adeyemo', '', '', '{email}', '{password}'),
+(3, 'bayo adeyemo', '', '', '{email}', '{password}'),
+(4, 'john james', 'jjames', '', '{email}', '{password}'),
+(5, 'jonni', 'jonn1', '', '{email}', '{password}'),
+(6, 'nenene', 'nene', '', '{email}', '{password}'),
+(7, 'bayo adeyemo', 'admin1', '', 'info@jidetaiwoandco.com', '123'),
+(8, '', '', '', 'john@yahoo.com', '1234'),
+(9, '', '', '', 'john@yahoo.com', '1234'),
+(10, '', '', '', 'john@yahoo.com', '1234'),
+(11, '', '', '', 'john@yahoo.com', '1234'),
+(12, 'roseline', 'janet', 'johnson', 'rose@yahoo.com', '125');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +73,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
