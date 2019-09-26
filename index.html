@@ -58,49 +58,67 @@
             <button class="uk-offcanvas-close" type="button" uk-close></button>
             <h3 class="uk-text-bold uk-margin-remove-top">Create Your Account</h3>
             <div class=" uk-width-1-1@s ">
-                <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
+                <form action="" method="POST"class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
     
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="fname">Full Name</label>
+                        <label class="uk-form-label" for="firstname">First Name</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="fname" type="text" placeholder="John Wick">
+                            <input type="text" class="uk-input" name="firstname" id="fname" oninput="firstname()" placeholder="Enter your First Name"/>
+                            <small><p id="validfname"></p></small>
                         </div>
                     </div>
     
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="uname">Username</label>
+                        <label class="uk-form-label" for="middlename">Middle Name</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="uname" type="text" placeholder="endgame">
+                            <input type="text" class="uk-input" name="middlename" id="mname" oninput="middlename()" placeholder="Enter your Middle Name"/>
+                            <small><p id="validmname"></p></small>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="lastname">Last Name</label>
+                        <div class="uk-form-controls">
+                            <input type="text" class="uk-input" name="lastname" id="lname" oninput="lastname()" placeholder="Enter your Last Name"/>
+                            <small><p id="validlname"></p></small>
                         </div>
                     </div>
     
                     <div class="uk-margin">
                         <label class="uk-form-label" for="email">Email</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="email" type="email" placeholder="a@b.c">
+                            <input type="email"  class="uk-input" name="email" id="email" oninput="emailPart()" placeholder="Enter your Email"/>
+                            <small><p id="validemail"></p></small>
                         </div>
                     </div>
     
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="pword">Password</label>
+                        <label class="uk-form-label" for="password">Password</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="pword" type="password" placeholder="**************">
+                            <input type="password" class="uk-input" name="password" id="pword" oninput="password()" placeholder="Enter your Password"/>
+                            <small><p id="validpassword"></p></small>
                         </div>
                     </div>
     
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="pass2">Confirm Password</label>
+                        <label class="uk-form-label" for="passwordConfirm">Confirm Password</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="pass2" type="password" placeholder="****************">
+                            <input type="password" class="uk-input" id="pswrdConf" oninput="passWordConfirm()" placeholder="Confirm your Password"/>
+                            <small><p id="validPasswordConfirm"></p></small>
                         </div>
                     </div>
+                    <div class="inline">
+                        <input type="checkbox" name="terms" class="checkbox"/>
+                        <small class="tandc">By signing up I agree to
+                            <a href="#">Terms and Conditions</a>
+                        </small>
+                    </div>
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-theme uk-width-1-1@s">Sign up</button>
+                        <button class="uk-button uk-button-theme">Sign up</button>
                     </div>
                 </form>
-            </div>
             <div>
-                <h4 class="uk-text-bold uk-margin-remove-bottom">Already have an account? <a href="#" uk-toggle="target: #login">Login</a></h4>
+                <small class="tandc">Already have an account? <a href="dashboard.html">Log in</a></small>
             </div>
         </div>
     </div>
@@ -110,38 +128,149 @@
     <!--Code for login-->
     <div id="login" uk-offcanvas="mode: reveal; overlay: true">
         <div class="uk-offcanvas-bar">
+    
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <!--@pennywise-->
             <h3 class="uk-text-bold uk-margin-remove-top">Login to Your Account</h3>
             <div class=" uk-width-1-1@s ">
-                <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
+                <form action="" method="POST" class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="euname">Username or Email</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="euname" type="text" placeholder="endgame">
-                        </div>
-                    </div>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="password">Password</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="password" type="password" placeholder="**************">
-                        </div>
+                        <label class="uk-form-label" for="email">E-mail</label>
+                        <input type="email" name="email" id="email" oninput="emailPart()" placeholder="Enter your E-mail"/>
+                        <small><p id="validemail"></p></small>
                     </div>
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-theme uk-width-1-1@s">Login</button>
+                        <label class="uk-form-label" for="passowrd">Password</label>
+                        <input type="text" class="uk-input" name="password" id="password" oninput="passWord()" placeholder="Enter your Password"/>
+                        <small><p id="validPassword"></p></small>
+                        </div>
+                    </div>
+                    <div class="inline">
+                        <input type="checkbox" class="checkbox"/>
+                        <small class="tandc">Remember Me
+                            <a href="#">Forgot Password?</a></small> 
+                        </div>
+                        <div class="uk-margin">
+                                <button class="uk-button uk-button-theme">Log In</button>
+                            </div>
+                    <div>
+                        <small class="tandc">Don't have an account? <a href="index">Sign up here</a></small>
                     </div>
                 </form>
             </div>
-            <div>
-                <h4 class="uk-text-bold uk-margin-remove-bottom">Don’t have an account? <a href="#" uk-toggle="target: #sign-up">Sign up</a></h4>
-            </div>
-            <!--@pennywise-->
-        </div>
-    </div>
     <!--Code for login-->
 </section>
+<!--- JAVASCRIPT VALIDATION FOR SIGNUP AND SIGNIN-->
+<script src="assets/js/app.js">
 
-<script src="assets/js/app.js"></script>
+function firstname(){
+    let fname = document.querySelector("#fname").value;
+                let fpattern =   /^[a-zA-Z]{2,20}$/;
+                    if(fpattern.test(String(fname).toUpperCase())  == true && !fname.length < 4   ){
+                        ftext = "Valid First Name input";
+                    } else {
+                        ftext = "Input not valid";
+                    }
+                
+                   document.getElementById("validfname").innerHTML = ftext;
+}
+
+function middleName(){
+                let mname = document.querySelector("#mname").value;
+                let fpattern =     /^[a-zA-Z]{2,20}$/;
+                    if(fpattern.test(String(mname).toUpperCase())  == true && !fname.length < 4   ){
+                        ftext = "Valid Middle Name input";
+                    } else {
+                        ftext = "Input not valid";
+                    }
+                
+                   document.getElementById("validmname").innerHTML = ftext;
+            }
+            function lastName(){
+                let lname = document.querySelector("#lname").value;
+                let fpattern =     /^[a-zA-Z]{2,20}$/;
+                    if(fpattern.test(String(lname).toUpperCase())  == true && !fname.length < 4   ){
+                        ftext = "Valid Last Name input";
+                    } else {
+                        ftext = "Input not valid";
+                    }
+                
+                   document.getElementById("validlname").innerHTML = ftext;
+            }
+            function emailPart(){
+                let email = document.querySelector("#email").value;
+                let valid = document.querySelector("#validemail");
+                let pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/;
+                    if(pattern.test(String(email).toLowerCase()) == true){
+                        text = "Valid Email input";
+                    } else {
+                        text = "Add a valid email";
+                    }
+                
+                   document.getElementById("validemail").innerHTML = text;
+                }
+                function passWord(){
+                let password = document.querySelector("#pswrd").value;
+                let tpattern =  /^(?=[^\s]*?[0-9])(?=[^\s]*?[a-zA-Z])[a-zA-Z0-9]{2,20}$/;
+              
+                    if(tpattern.test(String(password))  == true  ){
+                        ttext = "Valid Password input";
+                    } else {
+                        ttext = "Password must contain letters and numbers only (20 characters max)";
+                    }
+                
+                   document.getElementById("validPasswrd").innerHTML = ttext;
+            }
+            function passWordConfirm(){
+                let password = document.querySelector("#pswrdConf").value;
+                let passwordMain = document.querySelector("#pswrd").value;
+                let tpattern =  /^(?=[^\s]*?[0-9])(?=[^\s]*?[a-zA-Z])[a-zA-Z0-9]{2,20}$/;
+              
+                    if(tpattern.test(String(password))  == true  && (passwordMain === password) ){
+                        ttext = "Password match";
+                    } else {
+                            if(tpattern.test(String(password))  != true  && (passwordMain != password) )
+                            {
+                                ttext = "Password must contain letters and numbers only (20 characters max) and must match Password above";
+                   
+                            }
+                           else if(tpattern.test(String(password))  != true)
+                            {
+                                ttext = "Password must contain letters and numbers only (20 characters max)";
+                            }
+                            else if(passwordMain != password)
+                            {
+                                ttext = "Password Missmatch";
+                            }
+     
+                    }
+                
+                   document.getElementById("validPasswrdConfirm").innerHTML = ttext;
+            } 
+
+            function emailPart(){
+                let email = document.querySelector("#email").value;
+                let valid = document.querySelector("#validemail");
+                let pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/;
+                    if(pattern.test(String(email).toLowerCase()) == true){
+                        text = "Valid Email input";
+                    } else {
+                        text = "Add a valid email";
+                    }
+                
+                   document.getElementById("validemail").innerHTML = text;
+                }
+                function passWord(){
+                let password = document.querySelector("#pswrd").value;
+                let tpattern =  /^(?=[^\s]*?[0-9])(?=[^\s]*?[a-zA-Z])[a-zA-Z0-9]{2,20}$/;
+              
+                    if(tpattern.test(String(password))  == true  ){
+                        ttext = "Valid Password input";
+                    } else {
+                        ttext = "Password must contain letters and numbers only (20 characters max)";
+                    }
+                
+                   document.getElementById("validPasswrd").innerHTML = ttext;
+            }
+</script>
 </body>
 </html>
