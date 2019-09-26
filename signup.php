@@ -5,16 +5,17 @@ include "./includes/db.php";
 
 if(isset($_POST['submit'])) {
 
-    $fullname = $_POST['fullname'];
-    $username = $_POST['username'];
+    $firstname = $_POST['firstname'];
+    $middlename = $_POST['middlename'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
 
-$query = "INSERT INTO users(fullname, username, email, password) ";
+$query = "INSERT INTO users(firstname, middlename, lastname, email, password) ";
 
 $query .= 
-"VALUES('{$fullname}','{$username}','{$email}','{$password}') ";
+"VALUES('{$firstname}','{$middlename}','{$lastname}','{$email}','{$password}') ";
 
 $create_user_query = mysqli_query($connection, $query);
 
@@ -48,8 +49,9 @@ if($create_user_query) {
                 <div class="form-signup">
                 <h1>Create your account</h1>
                     <form action="#" method="POST">
-                        <input type="text" placeholder="Fullname" name="fullname"> 
-                        <input type="text" placeholder="Username" name= "username">
+                        <input type="text" placeholder="Firstname" name="firstname"> 
+                        <input type="text" placeholder="middlename" name= "middlename">
+                        <input type="text" placeholder="lastname" name= "lastname">
                         <input type="email" placeholder="Email" name="email">
                         <input type="password" placeholder="Password" name="password">
                         <input type="password" placeholder="Verify Password">
