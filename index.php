@@ -248,20 +248,6 @@ if(!isset($_SESSION['ID'])){
                         </div>
                     </div>
 
-                
-
-
-                    <div class="uk-margin">
-                        <label  class="uk-form-label" for="middlename">Middle Name: </label>
-                        <div class="uk-form-controls">
-                             <input type="text"  class="uk-input" style="color: black;" 
-                    name="middlename" id ="mname" oninput="middleName()" placeholder="Enter your Middle Name"/>
-                            <small style="color: black;" ><p id="validmname"></p></small>
-                        </div>
-                    </div>
-                    
-               
-
                     <div class="uk-margin">
                        <label  class="uk-form-label" for="lastname">Last Name: </label>
                         <div class="uk-form-controls">
