@@ -330,8 +330,8 @@
   }
   </script>
   <?php
-    }
-    else{
+    
+    if{
         echo("<script>location.href = 'index';</script>");
         header("location: index");
     }
