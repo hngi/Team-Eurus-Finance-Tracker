@@ -23,13 +23,13 @@ if(!isset($_SESSION['ID'])){
     <title>Eurus Wallet | Welcome</title>
     <link rel="stylesheet" href="assets/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
-    <link rel="favicon" href="./assets/logo.svg">
-    <link rel="apple-touch-icon" href="./assets/favicon.svg">
-    <link href="./assets/favicon.svg" rel="icon">
-    <link rel="apple-touch-icon" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="167x167" href="./assets/favicon.svg">
+    <link rel="favicon" href="./assets/images/logo.svg">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.svg">
+    <link href="./assets/images/favicon.svg" rel="icon">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="167x167" href="./assets/images/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,7 +37,7 @@ if(!isset($_SESSION['ID'])){
 <div id="introLoader" class="introloader">
     <div class="loader-container">
         <div class="spinner">
-            <img src="assets/logo.svg" alt="">
+            <img src="assets/images/logo.svg" alt="">
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@ if(!isset($_SESSION['ID'])){
     <header>
         <nav class="uk-flex uk-flex-between uk-padding uk-flex-middle uk-position-z-index">
             <div>
-                <img src="./assets/logo.svg" alt="">
+                <img src="./assets/images/logo.svg" alt="">
             </div>
             <div>
                 
@@ -203,11 +203,12 @@ if(!isset($_SESSION['ID'])){
 
 
                 <!--- ALERTS --->
-                <h4><i style="color: #44E615; text-align: center; background-color: #EAF9EA;"><strong id="success"></strong></i></h4>
-                <h4><i style="color: #1BCEDA; text-align: center; background-color: #EAF9EA;"><strong id="info"></strong></i></h4>
-                <h4><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="email-error"></strong></i></h4>
-                <h4><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="password-error"></strong></i></h4>
-                <h4><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="failure"></strong></i></h4>
+
+                <h6><i style="color: #44E615; text-align: center; background-color: #EAF9EA;"><strong id="success"></strong></i></h6>
+                <h6><i style="color: #1BCEDA; text-align: center; background-color: #EAF9EA;"><strong id="info"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="email-error"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="password-error"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="failure"></strong></i></h6>
                 <!--- ALERTS --->
             </div>
             <div>
@@ -220,7 +221,7 @@ if(!isset($_SESSION['ID'])){
                     <h2 class="uk-text-bold">A Simple Task</h2>
                     <p>Ever wondered what black hole your money goes into? With Eurus Wallet, you can track your spending
                         easily.</p>
-                    <button class="uk-button uk-button-theme">Try EurusWallet</button>
+                    <button class="uk-button uk-button-theme" uk-toggle="target: #sign-up">Try EurusWallet</button>
                 </div>
             </div>
             <div class="uk-width-2-3@m bgdiv">
@@ -246,20 +247,6 @@ if(!isset($_SESSION['ID'])){
                             <small style="color: black;"><p id="validfname"></p></small>
                         </div>
                     </div>
-
-                
-
-
-                    <div class="uk-margin">
-                        <label  class="uk-form-label" for="middlename">Middle Name: </label>
-                        <div class="uk-form-controls">
-                             <input type="text"  class="uk-input" style="color: black;" 
-                    name="middlename" id ="mname" oninput="middleName()" placeholder="Enter your Middle Name"/>
-                            <small style="color: black;" ><p id="validmname"></p></small>
-                        </div>
-                    </div>
-                    
-               
 
                     <div class="uk-margin">
                        <label  class="uk-form-label" for="lastname">Last Name: </label>

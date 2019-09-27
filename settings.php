@@ -6,25 +6,25 @@ include "controller_dependency.php";
 //instantiate controller class and select apprioprate class
 $obj = factory::DashboardController();
 
-if (isset($_SESSION['ID'])) {
+if (isset($_SESSION['ID'])){
 
-    $userData = $obj->GetUserDetails($_SESSION['ID']);
+$userData = $obj->GetUserDetails($_SESSION['ID']);
 
-    if ($userData['STATUS'] === 'SUCCESS') {
-        $firstname = $userData['DATA'][0]['FIRSTNAME'];
-        $lastname = $userData['DATA'][0]['LASTNAME'];
-        $middlename = $userData['DATA'][0]['MIDDLENAME'];
-        $email = $userData['DATA'][0]['EMAIL'];
-        $regDate = $userData['DATA'][0]['REGDATE'];
+if ($userData['STATUS'] === 'SUCCESS') {
+    $firstname = $userData['DATA'][0]['FIRSTNAME'];
+    $lastname = $userData['DATA'][0]['LASTNAME'];
+    $middlename = $userData['DATA'][0]['MIDDLENAME'];
+    $email = $userData['DATA'][0]['EMAIL'];
+    $regDate = $userData['DATA'][0]['REGDATE'];
 
-        $fullname = $firstname . " " . $middlename . " " . $lastname;
-    }
+    $fullname = $firstname . " " . $middlename . " " . $lastname;
+}
 
-    if ($userData['STATUS'] === 'FAILURE') {
-        //redirect to login page
-        echo("<script>location.href = 'index';</script>");
-        header("location: index");
-    }
+if ($userData['STATUS'] === 'FAILURE') {
+    //redirect to login page
+    echo("<script>location.href = 'index';</script>");
+    header("location: index");
+}
 }
 
 ?>
@@ -69,10 +69,10 @@ if (isset($_SESSION['ID'])) {
                 <div>
                     <a href="expenditure.php">Expenditure</a>
                 </div>
-                <div class="active">
+                <div>
                     <a href="categories.php">Categories</a>
                 </div>
-                <div>
+                <div class="active">
                     <a href="settings.php">Settings</a>
                 </div>
             </div>
@@ -92,50 +92,59 @@ if (isset($_SESSION['ID'])) {
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui uk-padding-small">
-        <div class="ui_main">
-            <div class="section-tours" id="section-tours">
-                <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
-                    <h4 class="uk-margin-remove">
+    </div>    <div class="ui uk-padding-small">
+    <div class="ui_main">
+        <div class="section-tours" id="section-tours">
+            <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
+                <h4 class="uk-margin-remove">
 
-                    </h4>
-                    <h2 class="uk-text-bold uk-margin-remove ">
-                        Categories
-                    </h2>
-                </div>
-                <div class="uk-height-1-1 dash-content">
-                    <div class="uk-width-1-1@s uk-overflow-auto">
-                        <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
-                            <thead>
-                            <tr>
-                                <th class="uk-width-small">S/N</th>
-                                <th>Name</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Carrots</td>
-                            <tr>
-                                <td>1</td>
-                                <td>Carrots</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Carrots</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                </h4>
+                <h2 class="uk-text-bold uk-margin-remove ">
+                    Update User
+                </h2>
+            </div>
+            <div class="uk-height-1-1 dash-content">
+                <div class="settings">
+                    <button class="uk-button" id="img-btn">
+                        <img src="./assets/images/avatar.png" alt="sean-paul" />
+                    </button>
+                    <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="euname">NAME</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" style="color: black;" id="euname" type="text" value="<?php  echo $fullname ?>" placeholder="Add item" disabled>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="euname">EMAIL</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" style="color: black;" id="euname" type="text" value="<?php echo $email ?>" placeholder="Add item" disabled>
+                                </div>
+                            </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="euname">DATE REGISTERED</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" style="color: black;" id="euname" type="text" value="<?php echo $regDate ?>" placeholder="Add item" disabled>
+                            </div>
+                        </div>
 
                         <div class="uk-margin">
-                            <button class="uk-button uk-button-theme" uk-toggle="target: #expend">Add Category</button>
+                            <label class="uk-form-label" for="password">PASSWORD</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" style="color: black;" id="password" type="password" placeholder="Password">
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-theme uk-width-1-1@s">Update User</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
     <div id="expend" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
@@ -145,8 +154,7 @@ if (isset($_SESSION['ID'])) {
                 <div class="uk-margin">
                     <label class="uk-form-label" for="euname">NAME</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" style="color: black;" id="euname" type="text"
-                               placeholder="Add Category name">
+                        <input class="uk-input"  style="color: black;" id="euname" type="text" placeholder="Add Category name">
                     </div>
                 </div>
 
@@ -172,10 +180,10 @@ if (isset($_SESSION['ID'])) {
                         <div>
                             <a href="expenditure.php">Expenditure</a>
                         </div>
-                        <div class="active">
+                        <div>
                             <a href="categories.php">Categories</a>
                         </div>
-                        <div>
+                        <div class="active">
                             <a href="settings.php">Settings</a>
                         </div>
                     </div>
@@ -203,4 +211,3 @@ if (isset($_SESSION['ID'])) {
 <script src="assets/js/app.js"></script>
 </body>
 </html>
-

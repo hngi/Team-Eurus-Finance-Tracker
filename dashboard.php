@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "controller_dependency.php";
+//instantiate controller class and select apprioprate class
+$obj = factory::DashboardController();
+if (isset($_SESSION['ID'])){
+$userData = $obj->GetUserDetails($_SESSION['ID']);
+if ($userData['STATUS'] === 'SUCCESS') {
+    $firstname = $userData['DATA'][0]['FIRSTNAME'];
+    $lastname = $userData['DATA'][0]['LASTNAME'];
+    $middlename = $userData['DATA'][0]['MIDDLENAME'];
+    $email = $userData['DATA'][0]['EMAIL'];
+    $regDate = $userData['DATA'][0]['REGDATE'];
+    $fullname = $firstname . " " . $middlename . " " . $lastname;
+}
+if ($userData['STATUS'] === 'FAILURE') {
+    //redirect to login page
+    echo("<script>location.href = 'index';</script>");
+    header("location: index");
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -7,79 +28,71 @@
     <title>Eurus Wallet | Welcome</title>
     <link rel="stylesheet" href="assets/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
-    <link rel="favicon" href="./assets/logo.svg">
-    <link rel="apple-touch-icon" href="./assets/favicon.svg">
-    <link href="./assets/favicon.svg" rel="icon">
-    <link rel="apple-touch-icon" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.svg">
-    <link rel="apple-touch-icon" sizes="167x167" href="./assets/favicon.svg">
+    <link rel="favicon" href="./assets/images/logo.svg">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.svg">
+    <link href="./assets/images/favicon.svg" rel="icon">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="167x167" href="./assets/images/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
-</head>
 <body>
 <!--Preloader-->
 <div id="introLoader" class="introloader">
     <div class="loader-container">
         <div class="spinner">
-            <img src="assets/logo.svg" alt="">
+            <img src="assets/images/logo.svg" alt="">
         </div>
     </div>
 </div>
-<div id="particles-js" class="uk-position-fixed"></div>
-<section>
-    <header>
-        <nav class="uk-flex uk-flex-between uk-padding uk-flex-middle uk-position-z-index">
-            <div>
-                <img src="./assets/logo.svg" alt="">
+<div id="particles-js" class="uk-position-fixed" hidden></div>
+<section class="uk-flex">
+    <a href="#" class="menu-toggle" uk-icon="icon: menu; ratio: 2" uk-toggle="target: #sidebar"></a>
+    <div class="sidebar">
+        <div>
+            <div class="logo">
+                <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
                 <div class="active">
-                    <a href="/Team-Eurus-Finance-Tracker/dashboard.html">Summary</a>
+                    <a href="dashboard.php">Summary</a>
                 </div>
                 <div>
-                    <a href="/Team-Eurus-Finance-Tracker/expenditure.html">Expenditure</a>
+                    <a href="expenditure.php">Expenditure</a>
                 </div>
                 <div>
-                    <a href="/Team-Eurus-Finance-Tracker/categories.html">Categories</a>
+                    <a href="categories.php">Categories</a>
                 </div>
                 <div>
-                    <a href="">Settings</a>
+                    <a href="settings.php">Settings</a>
                 </div>
             </div>
         </div>
+        <!--<div>
+            <h2>USER DETAILS</h2>
+            <h3></h3>
+            <p>Your email address is: <?php /*echo $email; */?></p>
+            <p>Your date of registration is: <?php /*echo $regDate; */?></p>
+        </div>-->
+
         <div>
             <div class="avatar-details">
                 <div class="avatar">
-                    <img src="./assets/avatar.png" alt="">
+                    <img src="./assets/images/avatar.png" alt="">
                 </div>
                 <div class="details">
-                    <h3 class="uk-text-bold">Sean Paul</h3>
+                    <h3 class="uk-text-bold"><?php echo $fullname; ?></h3>
                 </div>
-<<<<<<< HEAD:dashboard.php
-            </div> --> 
+            </div>
             <div class="links logout">
                 <div>
-                <a href="logout">Logout</a>
-=======
-            </div>
-        </nav>    <div class="uk-flex uk-flex-wrap uk-flex-middle viewport">
-            <div class="uk-width-1-3@m uk-padding">
-                <div>
-<<<<<<< HEAD:dashboard.html
-                    <h2 class="uk-text-bold">A Simple Task</h2>
-                    <p>Ever wondered what black hole your money goes into? With Eurus Wallet, you can track your spending
-                        easily.</p>
-                    <button class="uk-button uk-button-theme">Try EurusWallet</button>
-=======
-                    <a href="">Logout</a>
->>>>>>> master:dashboard.html
->>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
+                    <a href="logout">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!--Code for signup-->    <div class="ui uk-padding-small">
+
+    <div class="ui uk-padding-small">
         <div class="ui_main">
             <div class="section-tours" id="section-tours">
                 <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
@@ -90,7 +103,8 @@
                         Overview
                     </h2>
                 </div>
-                <ul class="uk-flex uk-flex-wrap uk-child-width-1-3@m uk-width-1-1@s ui-cards" uk-switcher="animation: uk-animation-fade">
+                <ul class="uk-flex uk-flex-wrap uk-child-width-1-3@m uk-width-1-1@s ui-cards"
+                    uk-switcher="animation: uk-animation-fade">
                     <li>
                         <a class="card">
                             <div class="card__side card__side--1">
@@ -98,12 +112,12 @@
                                 <h4 class="card__heading">
                                     <span class="card__heading--span card__heading--span-1">₦0.00</span>
                                 </h4>
-    
+
                             </div>
-    
+
                         </a>
                     </li>
-    
+
                     <li>
                         <a class="card">
                             <div class="card__side card__side--2">
@@ -111,9 +125,9 @@
                                 <h4 class="card__heading">
                                     <span class="card__heading--span card__heading--span-2">₦0.00</span>
                                 </h4>
-    
+
                             </div>
-    
+
                         </a>
                     </li>
                     <li class="">
@@ -123,11 +137,9 @@
                                 <h4 class="card__heading">
                                     <span class="card__heading--span card__heading--span-3">₦0.00</span>
                                 </h4>
-    
-    <!--Code for signup-->
-    <div id="sign-up" uk-offcanvas="mode: reveal; overlay: true">
-        <div class="uk-offcanvas-bar">
-    
+
+                            </div>
+
                         </a>
                     </li>
                 </ul>
@@ -150,15 +162,13 @@
                             </tr>
                             </tbody>
                         </table>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="fname">Full Name</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="fname" type="text" placeholder="John Wick">
+
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div>
                     </li>
                     <li>
-    
+
                         <h3 class="monthbg">This Month</h3>
                         <table class="uk-table uk-table-divider uk-table-hover">
                             <tbody>
@@ -176,14 +186,13 @@
                             </tr>
                             </tbody>
                         </table>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="uname">Username</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="uname" type="text" placeholder="endgame">
+
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div>
-                    </div>
-    
+                    </li>
+                    <li>
+
                         <h3 class="yearbg">This Year</h3>
                         <table class="uk-table uk-table-divider uk-table-hover">
                             <tbody>
@@ -201,142 +210,73 @@
                             </tr>
                             </tbody>
                         </table>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="pword">Password</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="pword" type="password" placeholder="**************">
+
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div>
                     </li>
                 </ul>
-                <button class="uk-button uk-button-theme">Export to PDF</button>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="pass2">Confirm Password</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="pass2" type="password" placeholder="****************">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <button class="uk-button uk-button-theme uk-width-1-1@s">Sign up</button>
-                    </div>
-                </form>
-            </div>
-            <div>
-                <h4 class="uk-text-bold uk-margin-remove-bottom">Already have an account? <a href="#" uk-toggle="target: #login">Login</a></h4>
+
             </div>
         </div>
     </div>
-    <!--Code for signup-->
-    
-    
-    <!--Code for login-->
-    <div id="login" uk-offcanvas="mode: reveal; overlay: true">
-        <div class="uk-offcanvas-bar">
+    <div id="sidebar" uk-offcanvas="mode: reveal; overlay: true">
+        <div class="uk-offcanvas-bar dashboard">
+
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-<<<<<<< HEAD:dashboard.html
-            <!--@pennywise-->
-            <h3 class="uk-text-bold uk-margin-remove-top">Login to Your Account</h3>
-            <div class=" uk-width-1-1@s ">
-                <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="euname">Username or Email</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="euname" type="text" placeholder="endgame">
-=======
             <div class="canvas">
                 <div>
                     <div class="logo">
-                        <img src="./assets/logo.svg" alt="">
+                        <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="links">
-<<<<<<< HEAD:dashboard.php
-                         <div>
-                        <a href="expenditure">Add Expenditure</a>
-                    </div>    
-                 <!--    <div class="active">
-                            <a href="">Summary</a>
+                        <div>
+                            <a href="expenditure">Add Expenditure</a>
                         </div>
-                        
-=======
                         <div class="active">
-                            <a href="">Summary</a>
+                            <a href="dashboard">Summary</a>
+                        </div>
+
+                        <div>
+                            <a href="categories">Categories</a>
                         </div>
                         <div>
-                            <a href="">Expenditure</a>
+                            <a href="settings">Settings</a>
                         </div>
->>>>>>> master:dashboard.html
-                        <div>
-                            <a href="">Categories</a>
-                        </div>
-                        <div>
-                            <a href="">Settings</a>
-<<<<<<< HEAD:dashboard.php
-                        </div> --> 
                     </div>
                 </div>
                 <div>
-                    <!-- <div class="avatar-details">
-                <div class="avatar">
-                    <img src="./assets/avatar.png" alt="">
-                </div>
-                <div class="details">
-                    <h3 class="uk-text-bold">Sean Paul</h3>
-                </div>
-            </div> --> 
+                    <div class="avatar-details">
+                        <div class="avatar">
+                            <img src="./assets/images/avatar.png" alt="">
+                        </div>
+                        <div class="details">
+                            <h3 class="uk-text-bold"><?php echo $fullname; ?></h3>
+                        </div>
+                    </div>
                     <div class="links logout">
                         <div>
                             <a href="logout">Logout</a>
-=======
->>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
                         </div>
                     </div>
-    
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="password">Password</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="password" type="password" placeholder="**************">
-                        </div>
-                    </div>
-<<<<<<< HEAD:dashboard.html
-                    <div class="uk-margin">
-                        <button class="uk-button uk-button-theme uk-width-1-1@s">Login</button>
-=======
-                    <div class="links logout">
-                        <div>
-                            <a href="">Logout</a>
->>>>>>> master:dashboard.html
-                        </div>
->>>>>>> 9556ff90f1ab915a1983a9a747a4f84dc688099b:dashboard.php
-                    </div>
-                </form>
+                </div>
             </div>
-            <div>
-                <h4 class="uk-text-bold uk-margin-remove-bottom">Don’t have an account? <a href="#" uk-toggle="target: #sign-up">Sign up</a></h4>
-            </div>
-            <!--@pennywise-->
         </div>
     </div>
-    <!--Code for login-->
 </section>
 
 <script src="assets/js/app.js"></script>
-<<<<<<< HEAD:dashboard.php
 <script>
-  function logout()
-  {
-    window.location = "logout";
-        
-  }
-  </script>
-  <?php
-    
-    if{
-        echo("<script>location.href = 'index';</script>");
-        header("location: index");
+    function logout() {
+        window.location = "logout";
     }
-    ?>
-=======
->>>>>>> master:dashboard.html
+</script>
+<?php
+}
+else {
+    echo("<script>location.href = 'index';</script>");
+    header("location: index");
+}
+?>
 </body>
 </html>

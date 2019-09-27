@@ -1,4 +1,3 @@
-
 /**
  * @author Mofehintolu Mumuni for team Devpoint
  * @description Simple javascript helper functions to render timed alerts from the backend
@@ -14,7 +13,13 @@ function cancel_timed_alert(element_id, interval_variable) {
 
 function generate_alert(error_message, element_id, text_color) {
     var ToElement = get_element(element_id);
-    ToElement.innerHTML = error_message;
+    ToElement.innerHTML = error_message
+        `
+    <div class="uk-alert-primary" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+`;
     ToElement.style.color = text_color;
 }
 
