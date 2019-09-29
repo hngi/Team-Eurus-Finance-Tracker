@@ -27,6 +27,7 @@ include"Controllers/LoginController.php";
 
 include"Controllers/DashboardController.php";
 
+include"Controllers/ExpensesController.php";
 
 
 class factory{
@@ -48,7 +49,12 @@ class factory{
  {
     return new DashboardController;
  }
-    
+
+
+ public static function ExpensesController()
+ {
+    return new ExpensesController;
+ }
     
 
  }

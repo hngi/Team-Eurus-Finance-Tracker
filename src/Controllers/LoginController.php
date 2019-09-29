@@ -254,8 +254,8 @@ class LoginController extends SqlQuery{
                     }
                     else{
                         echo'<p style="color: red;">Error!</p>';
-                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful!', 'info', 'red');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', info_no_user);}, 10000);</script>";
+                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful!', 'success', 'red');}, 1000); 
+                setTimeout(function(){cancel_timed_alert('success', info_no_user);}, 10000);</script>";
                  
                         
                     }
@@ -263,8 +263,8 @@ class LoginController extends SqlQuery{
                 }
                 else{
                    echo'<p style="color: red;">Error!</p>';
-                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful', 'info', 'red');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', info_no_user);}, 10000);</script>";
+                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful', 'success', 'red');}, 1000); 
+                setTimeout(function(){cancel_timed_alert('success', info_no_user);}, 10000);</script>";
                  
                     
                 }
@@ -273,8 +273,8 @@ class LoginController extends SqlQuery{
             }
             else{
                 echo'<p style="color: red;">Error!</p>';
-                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful, account details does not exist, please Signup!', 'info', 'red');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', info_no_user);}, 10000);</script>";
+                echo"<script> var info_no_user = setInterval(function(){generate_alert('Login not successful, account details does not exist, please Signup!', 'success', 'red');}, 1000); 
+                setTimeout(function(){cancel_timed_alert('success', info_no_user);}, 10000);</script>";
                 
             }
    
@@ -282,8 +282,8 @@ class LoginController extends SqlQuery{
         }
         else{
                 echo'<p style="color: red;">Error!</p>';
-                echo"<script> var info_no_user = setInterval(function(){generate_alert('User input error, ensure you adhere to the rules of signup and login', 'info', 'red');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', info_no_user);}, 10000);</script>";
+                echo"<script> var info_no_user = setInterval(function(){generate_alert('User input error, ensure you adhere to the rules of signup and login', 'success', 'red');}, 1000); 
+                setTimeout(function(){cancel_timed_alert('success', info_no_user);}, 10000);</script>";
                 
             }
     }

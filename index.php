@@ -6,8 +6,6 @@ include"controller_dependency.php";
 //instantiate controller class and select apprioprate class
  $objLogin = factory::LoginController();
 
- //instantiate controller class and select apprioprate class
- $objReg = factory::RegisterController();
  
 $token = $_SESSION['token'] = md5(rand(1,10000000));
 
@@ -31,6 +29,8 @@ if(!isset($_SESSION['ID'])){
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="167x167" href="./assets/images/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/backend_alert_controls.js"></script>
 </head>
 <body>
 <!--Preloader-->
@@ -51,7 +51,7 @@ if(!isset($_SESSION['ID'])){
             <div>
                 
                 
-              <!----- START PHP CODE ----->
+              <!----- START PHP CODE DEVELOPED BY MOFEHINTOLU MUMUNI @BITS_AND_BYTES----->
 
               <?php
 
@@ -108,22 +108,22 @@ if(!isset($_SESSION['ID'])){
                           }
                           else{
                               echo'<p style="color: red;">Error!</p>';
-                              echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful', 'info', 'red');}, 1000); 
-                              setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
+                              echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful', 'success', 'red');}, 1000); 
+                              setTimeout(function(){cancel_timed_alert('success', email_var);}, 10000);</script>";
                           }
           
                           }
                           else{
                               echo'<p style="color: red;">Error!</p>';
-                              echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful check your inputs', 'info', 'red');}, 1000); 
-                              setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
+                              echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful check your inputs', 'success', 'red');}, 1000); 
+                              setTimeout(function(){cancel_timed_alert('success', email_var);}, 10000);</script>";
                           }
           
                       }
                       else{
                           echo'<p style="color: red;">Error!</p>';
-                          echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful', 'info', 'red');}, 1000); 
-                          setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
+                          echo"<script> var email_var = setInterval(function(){generate_alert('Login not successful', 'success', 'red');}, 1000); 
+                          setTimeout(function(){cancel_timed_alert('success', email_var);}, 10000);</script>";
                       }
           
                       }
@@ -146,66 +146,10 @@ if(!isset($_SESSION['ID'])){
                           
           
                   <!----- END PHP CODE ----->
-          
-
-                      <!----- START PHP CODE FOR SIGNUP DEVELOPED BY MOFEHINTOLU-MUMUNI ----->
-
-              <?php
-
-            if(isset($_POST['user_signup']))
-            {
-            if($_SERVER['REQUEST_METHOD'] == "POST")
-            {
-                if((isset($_POST['email'])) && (isset($_POST['password'])) && ($_POST['email'] != null) && ($_POST['password'] != null) && (isset($_POST['firstname'])) && (isset($_POST['middlename'])) && ($_POST['firstname'] != null) && ($_POST['middlename'] != null) && (isset($_POST['lastname'])) && (isset($_POST['passwordConfirm'])) && ($_POST['lastname'] != null) && ($_POST['passwordConfirm'] != null) && (isset($_POST['terms'])) && ($_POST['terms'] != null))
-                {
-                    if(($token == $_SESSION['token']) && ($_POST['passwordConfirm'] === $_POST['password']))
-                    {
-
-                            //CALL UP REGISTER FUNCTION
-                            $objReg->Register($_POST['firstname'],$_POST['lastname'],$_POST['middlename'],$_POST['email'],$_POST['password']);
-                
-                    }
-                    else{
-                        echo'<p style="color: red;">Error!</p>';
-                        echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful, password missmatch!', 'info', 'red');}, 1000); 
-                        setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
-                    }
-
-                }
-                else{
-                        if(!isset($_POST['terms']))
-                        {
-                            echo'<p style="color: red;">Error!</p>';
-                            echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful check your inputs and accept terms and conditions.', 'info', 'red');}, 1000); 
-                            setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
-                        }
-                        else
-                        {
-                            echo'<p style="color: red;">Error!</p>';
-                            echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful check your inputs', 'info', 'red');}, 1000); 
-                            setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
-                        }
-                        
-                    }
-
-            }
-            else{
-                echo'<p style="color: red;">Error!</p>';
-                echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful', 'info', 'red');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
-            }
-
-            }
-
-            ?>
-
-  <!----- END PHP CODE ----->
-
-
+  
                 <!--- ALERTS --->
 
                 <h6><i style="color: #44E615; text-align: center; background-color: #EAF9EA;"><strong id="success"></strong></i></h6>
-                <h6><i style="color: #1BCEDA; text-align: center; background-color: #EAF9EA;"><strong id="info"></strong></i></h6>
                 <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="email-error"></strong></i></h6>
                 <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="password-error"></strong></i></h6>
                 <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="failure"></strong></i></h6>
@@ -236,14 +180,16 @@ if(!isset($_SESSION['ID'])){
     
             <button class="uk-offcanvas-close" type="button" uk-close></button>
             <h3 class="uk-text-bold uk-margin-remove-top">Create Your Account</h3>
+            <h6><i style="color: #1BCEDA; text-align: center; background-color: #EAF9EA;"><strong id="info"></strong></i></h6>
+              
             <div class=" uk-width-1-1@s ">
-                <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l" action="" method="POST">
+             <!--   <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l" action="" method="POST"> -->
     
                     <div class="uk-margin">
                         <label class="uk-form-label" for="firstname">First Name</label>
                         <div class="uk-form-controls">
                             <input type="text" 
-                            class="uk-input" style="color: black;" name="firstname" id ="fname" oninput="firstName()" placeholder="Enter your First Name"/>
+                            class="uk-input" style="color: black; border: 1px solid #000" name="firstname" id ="fname" oninput="firstName()" placeholder="Enter your First Name"/>
                             <small style="color: black;"><p id="validfname"></p></small>
                         </div>
                     </div>
@@ -251,7 +197,7 @@ if(!isset($_SESSION['ID'])){
                     <div class="uk-margin">
                        <label  class="uk-form-label" for="lastname">Last Name: </label>
                         <div class="uk-form-controls">
-                            <input type="text" class="uk-input" style="color: black;"   
+                            <input type="text" class="uk-input" style="color: black; border: 1px solid #000"  
                     name="lastname" id ="lname" oninput="lastName()" placeholder="Enter your Last Name"/>
                             <small style="color: black;" ><p id="validlname"></p></small>
                         </div>
@@ -262,7 +208,7 @@ if(!isset($_SESSION['ID'])){
                     <div class="uk-margin">
                         <label  class="uk-form-label" for="email">E-mail: </label>
                         <div class="uk-form-controls">
-                             <input type="email"  class="uk-input" style="color: black;"  
+                             <input type="email"  class="uk-input" style="color: black; border: 1px solid #000"   
                     name="email" id ="email" oninput="emailPart()" placeholder="Enter your E-mail"/>
                             <small style="color: black;" ><p id="validemail"></p></small>
                         </div>
@@ -273,36 +219,32 @@ if(!isset($_SESSION['ID'])){
                     <div class="uk-margin">
                           <label  class="uk-form-label" for="password">Password: </label>
                         <div class="uk-form-controls">
-                             <input type="password" class="uk-input" style="color: black;"   
+                             <input type="password" class="uk-input" style="color: black; border: 1px solid #000"   
                     name="password" id = "pswrd" oninput="passWord()" placeholder="Enter your Password"/>
                     <small style="color: black;" ><p id="validPasswrd"></p></small>
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-    
+              
                     <div class="uk-margin">
                        <label class="uk-form-label" for="passwordConfirm">Confirm Password: </label>
                         <div class="uk-form-controls">
-                            <input type="password" class="uk-input" style="color: black;"  
+                            <input type="password" class="uk-input" style="color: black; border: 1px solid #000"   
                     name="passwordConfirm" id = "pswrdConf" oninput="passWordConfirm()" placeholder="Confirm your Password"/>
                     <small style="color: black;" ><p id="validPasswrdConfirm"></p></small>
                         </div>
                     </div>
                     
                      <div class ="inline">
-                        <input type="checkbox" name="terms" class="checkbox"/>
+                        <input type="checkbox" name="terms"  id="terms" value="Accpeted" class="checkbox"/>
                         <small class="tandc" style="color: black;" >By signing I agree to
                             <a href ="#">Terms and Conditions</a></small>
                        </div>
                     
                    
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-theme uk-width-1-1@s" name="user_signup">Sign up</button>
+                        <button class="uk-button uk-button-theme uk-width-1-1@s" name="user_signup" onclick="registerUser();">Sign up</button>
                     </div>
-                </form>
+                <!--  </form> --->
             </div>
             <div>
                 <h4 class="uk-text-bold uk-margin-remove-bottom">Already have an account? <a href="#" uk-toggle="target: #login">Login</a></h4>
@@ -325,7 +267,7 @@ if(!isset($_SESSION['ID'])){
                     <div class="uk-margin">
                         <label  class="uk-form-label" for="emailLogin">E-mail: </label>
                         <div class="uk-form-controls">
-                             <input type="email"  class="uk-input" style="color: black;"  
+                             <input type="email"  class="uk-input" style="color: black; border: 1px solid #000"   
                     name="emailLogin" id ="emailLogin" oninput="emailPartLogin()" placeholder="Enter your E-mail"/>
                             <small style="color: black;" ><p id="validemailLogin"></p></small>
                         </div>
@@ -336,7 +278,7 @@ if(!isset($_SESSION['ID'])){
                     <div class="uk-margin">
                           <label  class="uk-form-label" for="passwordLogin">Password: </label>
                         <div class="uk-form-controls">
-                             <input type="password" class="uk-input" style="color: black;"   
+                             <input type="password" class="uk-input" style="color: black; border: 1px solid #000"   
                     name="passwordLogin" id = "pswrdLogin" oninput="passWordLogin()" placeholder="Enter your Password"/>
                     <small style="color: black;" ><p id="validPasswrdLogin"></p></small>
                         </div>
@@ -356,10 +298,10 @@ if(!isset($_SESSION['ID'])){
 </section>
 
 <script src="assets/js/app.js"></script>
-<script src="js/backend_alert_controls.js"></script>
+
 
 <script>
-/////////////////signup  validation code developed by Mofehintolu-mumuni  ////////////
+/////////////////signup  validation code developed by Mofehintolu-mumuni  @BITS_AND_BYTES////////////
 
     function firstName(){
             let fname = document.querySelector("#fname").value;
@@ -388,7 +330,7 @@ if(!isset($_SESSION['ID'])){
                document.getElementById("validmname").innerHTML = ftext;
 
         }
-
+        
         function lastName(){
             let lname = document.querySelector("#lname").value;
             let fpattern =     /^[a-zA-Z]{2,20}$/;
@@ -461,6 +403,40 @@ if(!isset($_SESSION['ID'])){
 
         }
         
+
+        //Form submission code for registration 
+
+       function registerUser()
+            {    
+        let result = document.getElementById('info');
+        result.innerHTML = null;
+        var fnameValue = $('#fname').val();
+        var lnameValue = $('#lname').val();
+        var emailValue = $('#email').val();
+        var pswrdValue = $('#pswrd').val();
+        var pswrdConfValue = $('#pswrdConf').val();
+        var termsValue = $('#terms').val();
+     
+        $.post('src/regReceive.php',
+        {firstname:fnameValue,
+        lastname:lnameValue,
+        email:emailValue,
+        password:pswrdValue,
+        passwordConfirm:pswrdConfValue,
+        terms:termsValue
+        },
+        function(data){
+            $('#info').html(data);
+            alert('Sign up Event: Scroll to the top of the form for signup message');
+            }
+            );
+
+         }
+
+
+
+
+        //form submission code for registration
 
 
         /////////////////Login in validation code developed by Mofehintolu-mumuni  ////////////
