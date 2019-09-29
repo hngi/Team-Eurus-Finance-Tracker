@@ -1,23 +1,100 @@
 <?php
 session_start();
+<<<<<<< HEAD
 include "controller_dependency.php";
 //instantiate controller class and select apprioprate class
 $obj = factory::DashboardController();
 if (isset($_SESSION['ID'])){
 $userData = $obj->GetUserDetails($_SESSION['ID']);
+=======
+date_default_timezone_set('Africa/Lagos');
+/**
+ * @author Mofehintolu MUMUNI
+ * 
+ * @description Register controller that handles registration
+ * @slack @Bits_and_Bytes
+ * @copyright 2019
+ */
+
+include "controller_dependency.php";
+
+//instantiate controller class and select apprioprate class
+$obj = factory::DashboardController();
+
+if (isset($_SESSION['ID'])){
+
+$userData = $obj->GetUserDetails($_SESSION['ID']);
+
+>>>>>>> Mofe_backend
 if ($userData['STATUS'] === 'SUCCESS') {
     $firstname = $userData['DATA'][0]['FIRSTNAME'];
     $lastname = $userData['DATA'][0]['LASTNAME'];
-    $middlename = $userData['DATA'][0]['MIDDLENAME'];
     $email = $userData['DATA'][0]['EMAIL'];
     $regDate = $userData['DATA'][0]['REGDATE'];
+<<<<<<< HEAD
     $fullname = $firstname . " " . $middlename . " " . $lastname;
 }
+=======
+
+    $fullname = $firstname . " " . $lastname;
+}
+
+>>>>>>> Mofe_backend
 if ($userData['STATUS'] === 'FAILURE') {
     //redirect to login page
     echo("<script>location.href = 'index';</script>");
     header("location: index");
 }
+<<<<<<< HEAD
+=======
+
+//instantiate controller class and select apprioprate class
+$objExpense = factory::ExpensesController();
+
+$weeklyExpensesArray = $objExpense->weeklyExpenses($_SESSION['ID']);
+$monthlyExpensesArray = $objExpense->monthlyExpenses($_SESSION['ID']);
+$yearlyExpensesArray = $objExpense->yearlyExpenses($_SESSION['ID']);
+
+//handle weekly expenses
+if(($weeklyExpensesArray[0]['STATUS'] == "ERROR") || ($weeklyExpensesArray[0]['TOTAL_EXPENSES'] == null))
+{
+    $weeklyExpense = "₦0.00";
+}
+
+            
+if((count($weeklyExpensesArray[0]['USER_DATA']) > 0) && (is_array($weeklyExpensesArray[0]['USER_DATA']) == "TRUE") && ($weeklyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+{
+    $weeklyExpense = "₦".$objExpense->format_number($weeklyExpensesArray[0]['TOTAL_EXPENSES']).".00";
+}
+
+//handle monthly expenses
+
+if(($monthlyExpensesArray[0]['STATUS'] == "ERROR") || ($monthlyExpensesArray[0]['TOTAL_EXPENSES'] == null))
+{
+    $monthlyExpense = "₦0.00";
+}
+
+            
+if((count($monthlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($monthlyExpensesArray[0]['USER_DATA']) == "TRUE") && ($monthlyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+{
+    $monthlyExpense = "₦".$objExpense->format_number($monthlyExpensesArray[0]['TOTAL_EXPENSES']).".00";
+}
+
+
+//handle yearly expenses
+if(($yearlyExpensesArray[0]['STATUS'] == "ERROR") || ($yearlyExpensesArray[0]['TOTAL_EXPENSES'] == null))
+{
+    $yearlyExpense = "₦0.00";
+}
+
+            
+if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpensesArray[0]['USER_DATA']) == "TRUE") && ($yearlyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+{
+    $yearlyExpense = "₦".$objExpense->format_number($yearlyExpensesArray[0]['TOTAL_EXPENSES']).".00";
+}
+
+
+>>>>>>> Mofe_backend
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -54,6 +131,7 @@ if ($userData['STATUS'] === 'FAILURE') {
                 <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
+<<<<<<< HEAD
                 <div class="active">
                     <a href="dashboard.php">Summary</a>
                 </div>
@@ -66,6 +144,22 @@ if ($userData['STATUS'] === 'FAILURE') {
                 <div>
                     <a href="settings.php">Settings</a>
                 </div>
+=======
+                        <div class="active">
+                            <a href="dashboard">Summary</a>
+                        </div>
+                        <div>
+                            <a href="expenditure">Add Expenditure</a>
+                        </div>
+                       
+
+                      <!--  <div>
+                          <a href="search">Custom Search</a>
+                         </div> -->
+                <!--<div>
+                    <a href="settings.php">Settings</a>
+                </div> -->
+>>>>>>> Mofe_backend
             </div>
         </div>
         <!--<div>
@@ -109,8 +203,9 @@ if ($userData['STATUS'] === 'FAILURE') {
                         <a class="card">
                             <div class="card__side card__side--1">
                                 <p class="card__text card__text-1 ">This week</p>
+                                
                                 <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-1">₦0.00</span>
+                                    <span style="color:black;"><?php echo$weeklyExpense; ?></span>
                                 </h4>
 
                             </div>
@@ -122,8 +217,13 @@ if ($userData['STATUS'] === 'FAILURE') {
                         <a class="card">
                             <div class="card__side card__side--2">
                                 <p class="card__text card__text-2">This month</p>
+                                <h4>
+                                <p style="color:black;"><?php echo date("F",time()); ?></p>
+                                   </h4>
+                                
                                 <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-2">₦0.00</span>
+                                    <span style="color:black;"><?php echo $monthlyExpense; ?></span>
+                                    
                                 </h4>
 
                             </div>
@@ -134,8 +234,11 @@ if ($userData['STATUS'] === 'FAILURE') {
                         <a class="card">
                             <div class="card__side card__side--3">
                                 <p class="card__text card__text-3">This year</p>
+                                <h4>
+                                <p style="color:black;"><?php echo date("Y",time()); ?></p>
+                                   </h4>
                                 <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-3">₦0.00</span>
+                                    <span style="color:black;"><?php echo $yearlyExpense; ?></span>
                                 </h4>
 
                             </div>
@@ -144,8 +247,11 @@ if ($userData['STATUS'] === 'FAILURE') {
                     </li>
                 </ul>
                 <ul class="uk-switcher uk-margin">
-                    <li>
+                   
+                
+                <li>
                         <h3 class="weekbg">This Week</h3>
+<<<<<<< HEAD
                         <table class="uk-table uk-table-divider uk-table-hover">
                             <tbody>
                             <tr>
@@ -164,12 +270,81 @@ if ($userData['STATUS'] === 'FAILURE') {
                         </table>
 
                         <div class="uk-margin">
+=======
+                        <?php
+
+                            
+                if((count($weeklyExpensesArray[0]['USER_DATA']) > 0) && (is_array($weeklyExpensesArray[0]['USER_DATA']) == "TRUE") && ($weeklyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+                {
+                    $weeklyCount = sizeof($weeklyExpensesArray[0]['USER_DATA']);
+                   
+                    $start = 0;
+                    $weeklyNumber = 0;
+                    echo'<table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                    <thead>
+                    <tr>
+                        <th class="uk-width-small">S/N</th>
+                        <th>ITEM</th>    
+                        <th>Description</th>
+                        <th>Amount</th>    
+                        <th>Date</th> 
+                    </tr>
+                    </thead>
+                    <tbody>';
+                    while($start < $weeklyCount)
+                    {   
+                    
+
+                    $innerWeeklyArray = $weeklyExpensesArray[0]['USER_DATA'][$start];
+
+                    $innerWeeklyCount = sizeof($innerWeeklyArray);
+
+                    $innerWeeklyStart = 0;
+
+                    while($innerWeeklyStart < $innerWeeklyCount)
+                    {
+                        $weeklyNumber += 1;
+
+                        $weeklyItem = $innerWeeklyArray[$innerWeeklyStart]['ITEM'];
+                        $weeklyAmount = $objExpense->format_number($innerWeeklyArray[$innerWeeklyStart]['AMOUNT']);
+                        $weeklyDescription = $innerWeeklyArray[$innerWeeklyStart]['DESCRIPTION'];
+                        $weeklyDate = $innerWeeklyArray[$innerWeeklyStart]['DATE'];
+                            echo'<tr>
+                                <td>'.$weeklyNumber.'</td>
+                                <td>'.$weeklyItem.'</td>
+                                <td>'.$weeklyDescription.'</td>
+                                <td >₦<i>'.$weeklyAmount.'</i>.00</td> 
+                                <td ><i>'.$weeklyDate.'</i></td>
+                            </tr>';
+                    
+
+
+                        $innerWeeklyStart++;
+                    }
+
+                 
+                        $start++; 
+                    }
+                    echo'</tbody>
+                    </table>';
+                }
+
+
+
+                        ?>
+
+                       <!--- <div class="uk-margin">
+>>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
+                        </div> -->
                     </li>
+
+
+
                     <li>
 
                         <h3 class="monthbg">This Month</h3>
+<<<<<<< HEAD
                         <table class="uk-table uk-table-divider uk-table-hover">
                             <tbody>
                             <tr>
@@ -188,12 +363,69 @@ if ($userData['STATUS'] === 'FAILURE') {
                         </table>
 
                         <div class="uk-margin">
+=======
+                        <p class="monthbg"><?php echo date("F",time()); ?></p>
+                        <?php
+
+                            
+        if((count($monthlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($monthlyExpensesArray[0]['USER_DATA']) == "TRUE") && ($monthlyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+        {
+            $monthlyCount = sizeof($monthlyExpensesArray[0]['USER_DATA']);
+        
+            $start = 0;
+            $monthlyNumber = 0;
+            echo'<table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+            <thead>
+            <tr>
+                <th class="uk-width-small">S/N</th>
+                <th>ITEM</th>    
+                <th>Description</th>
+                <th>Amount</th>    
+                <th>Date</th> 
+            </tr>
+            </thead>
+            <tbody>';
+            while($start < $monthlyCount)
+            {   
+            
+
+            $showMonthlyArray = $monthlyExpensesArray[0]['USER_DATA'][$start];
+
+            $monthlyNumber += 1;
+
+            $monthlyItem = $showMonthlyArray['ITEM'];
+            $monthlyAmount = $objExpense->format_number($showMonthlyArray['AMOUNT']);
+            $monthlyDescription = $showMonthlyArray['DESCRIPTION'];
+            $monthlyDate = $showMonthlyArray['DATE'];
+
+                echo'<tr>
+                    <td>'.$monthlyNumber.'</td>
+                    <td>'.$monthlyItem.'</td>
+                    <td>'.$monthlyDescription.'</td>
+                    <td >₦<i>'.$monthlyAmount.'</i>.00</td> 
+                    <td ><i>'.$monthlyDate.'</i></td>
+                </tr>';
+
+
+                $start++; 
+            }
+            echo'</tbody>
+            </table>';
+        }
+
+
+
+        ?>
+
+                        <!--- <div class="uk-margin">
+>>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
+                        </div> -->
                     </li>
                     <li>
 
                         <h3 class="yearbg">This Year</h3>
+<<<<<<< HEAD
                         <table class="uk-table uk-table-divider uk-table-hover">
                             <tbody>
                             <tr>
@@ -212,8 +444,60 @@ if ($userData['STATUS'] === 'FAILURE') {
                         </table>
 
                         <div class="uk-margin">
+=======
+                        <p class="monthbg"><?php echo date("Y",time()); ?></p>
+         <?php
+
+            if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpensesArray[0]['USER_DATA']) == "TRUE") && ($yearlyExpensesArray[0]['STATUS'] == 'SUCCESS'))
+                {
+            $yearlyCount = sizeof($yearlyExpensesArray[0]['USER_DATA']);
+        
+            $start = 0;
+            $yearlyNumber = 0;
+            echo'<table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+            <thead>
+            <tr>
+                <th class="uk-width-small">S/N</th>
+                <th>ITEM</th>    
+                <th>Description</th>
+                <th>Amount</th>    
+                <th>Date</th> 
+            </tr>
+            </thead>
+            <tbody>';
+            while($start < $yearlyCount)
+            {   
+            
+
+            $yearlyArray = $yearlyExpensesArray[0]['USER_DATA'][$start];
+
+            $yearlyNumber += 1;
+
+            $yearlyItem = $yearlyArray['ITEM'];
+            $yearlyAmount = $objExpense->format_number($yearlyArray['AMOUNT']);
+            $yearlyDescription = $yearlyArray['DESCRIPTION'];
+            $yearlyDate = $yearlyArray['DATE'];
+
+                echo'<tr>
+                    <td>'.$yearlyNumber.'</td>
+                    <td>'.$yearlyItem.'</td>
+                    <td>'.$yearlyDescription.'</td>
+                    <td >₦<i>'.$yearlyAmount.'</i>.00</td> 
+                    <td ><i>'.$yearlyDate.'</i></td>
+                </tr>';
+
+
+                $start++; 
+            }
+            echo'</tbody>
+            </table>';
+        }
+            ?>
+
+                        <!--- <div class="uk-margin">
+>>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
+                        </div> -->
                     </li>
                 </ul>
 
@@ -230,6 +514,7 @@ if ($userData['STATUS'] === 'FAILURE') {
                         <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="links">
+<<<<<<< HEAD
                         <div>
                             <a href="expenditure">Add Expenditure</a>
                         </div>
@@ -242,7 +527,22 @@ if ($userData['STATUS'] === 'FAILURE') {
                         </div>
                         <div>
                             <a href="settings">Settings</a>
+=======
+                        <div>
+                            <a href="expenditure">Add Expenditure</a>
                         </div>
+                        <div class="active">
+                            <a href="dashboard">Summary</a>
+>>>>>>> Mofe_backend
+                        </div>
+
+                        <!--  <div>
+                          <a href="search">Custom Search</a>
+                         </div> -->
+
+                       <!-- <div>
+                            <a href="settings">Settings</a>
+                        </div> --->
                     </div>
                 </div>
                 <div>
@@ -269,6 +569,10 @@ if ($userData['STATUS'] === 'FAILURE') {
 <script>
     function logout() {
         window.location = "logout";
+<<<<<<< HEAD
+=======
+
+>>>>>>> Mofe_backend
     }
 </script>
 <?php

@@ -13,11 +13,18 @@ if (isset($_SESSION['ID'])) {
     if ($userData['STATUS'] === 'SUCCESS') {
         $firstname = $userData['DATA'][0]['FIRSTNAME'];
         $lastname = $userData['DATA'][0]['LASTNAME'];
+<<<<<<< HEAD
         $middlename = $userData['DATA'][0]['MIDDLENAME'];
         $email = $userData['DATA'][0]['EMAIL'];
         $regDate = $userData['DATA'][0]['REGDATE'];
 
         $fullname = $firstname . " " . $middlename . " " . $lastname;
+=======
+        $email = $userData['DATA'][0]['EMAIL'];
+        $regDate = $userData['DATA'][0]['REGDATE'];
+
+        $fullname = $firstname . " " . $lastname;
+>>>>>>> Mofe_backend
     }
 
     if ($userData['STATUS'] === 'FAILURE') {
@@ -45,7 +52,24 @@ if (isset($_SESSION['ID'])) {
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="167x167" href="./assets/images/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
-<body>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/backend_alert_controls.js"></script>
+  
+  <script>
+  /*$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  */
+ 
+
+
+  
+  </script>
+
+    <body>
 <!--Preloader-->
 <div id="introLoader" class="introloader">
     <div class="loader-container">
@@ -63,6 +87,7 @@ if (isset($_SESSION['ID'])) {
                 <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
+<<<<<<< HEAD
                 <div>
                     <a href="dashboard.php">Summary</a>
                 </div>
@@ -75,6 +100,15 @@ if (isset($_SESSION['ID'])) {
                 <div>
                     <a href="settings.php">Settings</a>
                 </div>
+=======
+            <div >
+                <a href="dashboard">Summary</a>
+            </div>
+            <div class="active">
+                <a href="expenditure">Add Expenditure</a>
+            </div>
+          
+>>>>>>> Mofe_backend
             </div>
         </div>
         <div>
@@ -105,43 +139,50 @@ if (isset($_SESSION['ID'])) {
                         Expenditure
                     </h2>
                 </div>
+                   
+                <!--- ALERTS --->
+
+                <h6><i style="color: #44E615; text-align: center; background-color: #EAF9EA;"><strong id="success"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="email-error"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="password-error"></strong></i></h6>
+                <h6><i style="color: #DA381B; text-align: center; background-color: #EAF9EA;"><strong id="failure"></strong></i></h6>
+                <!--- ALERTS --->
+
                 <div class="uk-height-1-1 dash-content">
                     <div class="uk-width-1-1@s uk-overflow-auto">
-                        <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                  
+                    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
                             <thead>
                             <tr>
                                 <th class="uk-width-small">S/N</th>
-                                <th>Name</th>
-                                <th>Category</th>
+                                <th>ITEM</th>
+                               
                                 <th>Description</th>
                                 <th>Amount</th>
+                              
                             </tr>
                             </thead>
+                            
                             <tbody>
-                            <tr>
+                               
+                              
+                          <tr>
                                 <td>1</td>
-                                <td>Carrots</td>
-                                <td>Foodstuff</td>
-                                <td>I eat it as a healthy remedy</td>
-                                <td>₦1,500.00</td>
+                                <td id="showitem"></td>
+                                
+                                <td id="showdescription"></td>
+                                <td >₦<i id="showamount"></i>.00</td>
+                                
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Carrots</td>
-                                <td>Foodstuff</td>
-                                <td>I eat it as a healthy remedy</td>
-                                <td>₦1,500.00</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Carrots</td>
-                                <td>Foodstuff</td>
-                                <td>I eat it as a healthy remedy</td>
-                                <td>₦1,500.00</td>
-                            </tr>
+                          
                             </tbody>
+                      
                         </table>
+<<<<<<< HEAD
 
+=======
+                   
+>>>>>>> Mofe_backend
                         <div class="uk-margin">
                             <button class="uk-button uk-button-theme" uk-toggle="target: #expend">Add Expenditure</button>
                         </div>
@@ -155,31 +196,59 @@ if (isset($_SESSION['ID'])) {
 
             <button class="uk-modal-close-default" type="button" uk-close></button>
 
+<<<<<<< HEAD
             <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
                 <div class="uk-margin">
                     <label class="uk-form-label" for="euname">ITEM</label>
+=======
+            <!--- <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l" action="expenditure" method="POST"> --->
+            <div  id="info">
+            </div>    
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="item">ITEM</label>
+>>>>>>> Mofe_backend
                     <div class="uk-form-controls">
-                        <input class="uk-input" style="color: black;" id="euname" type="text" placeholder="Add item">
+                        <input class="uk-input" oninput="showitem()" style="color: black;" name="item" id="item" type="text" placeholder="Add item">
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="euname">AMOUNT</label>
+                    <label class="uk-form-label" for="amount">AMOUNT [Enter digits only, comma is not allowed as it would affect your amount]</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input"  style="color: black;" id="euname" type="text" placeholder="Add amount">
+                        <input class="uk-input" oninput="showamount()"  name="amount" step="1" min="1" max="10000000000000000000" style="color: black;" id="amount" type="number" placeholder="Add amount">
+                    </div>
+                </div>
+<<<<<<< HEAD
+=======
+              
+>>>>>>> Mofe_backend
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="description">DESCRIPTION</label>
+                    <div class="uk-form-controls">
+                    <?php
+                    
+                    $id = $_SESSION['ID'];
+ 
+                    ?>
+                        <input class="uk-input" oninput="showdescription()" name="description" style="color: black;" id="description" type="text" placeholder="Add item description">
                     </div>
                 </div>
 
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="password">DESCRIPTION</label>
+<<<<<<< HEAD
+=======
+               <!--- <div class="uk-margin">
+                    <label class="uk-form-label" for="datepicker" >DATE</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" style="color: black;" id="password" type="password" placeholder="Add item description">
+                        <input class="uk-input" oninput="showdate()" name="date_start" style="color: black;" id="datepicker" type="text" placeholder="Date">
                     </div>
-                </div>
+                </div>  --->
 
+             
+>>>>>>> Mofe_backend
                 <div class="uk-margin">
-                    <button class="uk-button uk-button-theme uk-width-1-1@s">Add Expenditure</button>
+                    <input class="uk-button uk-button-theme uk-width-1-1@s" type="submit" onclick="addExpense();" name="add" value="Add Expenditure">
                 </div>
-            </form>
+           <!--- </form> --->
         </div>
     </div>
     <div id="sidebar" uk-offcanvas="mode: reveal; overlay: true">
@@ -192,6 +261,7 @@ if (isset($_SESSION['ID'])) {
                         <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="links">
+<<<<<<< HEAD
                         <div>
                             <a href="dashboard.php">Summary</a>
                         </div>
@@ -204,6 +274,15 @@ if (isset($_SESSION['ID'])) {
                         <div>
                             <a href="settings.php">Settings</a>
                         </div>
+=======
+                    <div >
+                        <a href="dashboard">Summary</a>
+                    </div>
+                    <div class="active">
+                        <a href="expenditure">Add Expenditure</a>
+                    </div>
+ 
+>>>>>>> Mofe_backend
                     </div>
                 </div>
                 <div>
@@ -226,6 +305,78 @@ if (isset($_SESSION['ID'])) {
     </div>
 </section>
 
+        <script>
+
+
+            //Fire input methods DEVELOPED BY MOFEHINTOLU MUMUNI
+            
+        
+        var tag  = "<?php echo $id; ?>";
+        
+            function showdate()
+            {
+                var date_startValue = document.querySelector("#datepicker").value;
+                $('#showdate').html(date_startValue);
+            }
+
+            function showdescription()
+            {
+               
+                var descriptionValue = $('#description').val();
+                $('#showdescription').html(descriptionValue);
+            }
+
+            function formatnumber(itemValue)
+            {
+                return itemValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+                
+            }
+
+            function showitem()
+            {
+                var itemValue = $('#item').val();
+                $('#showitem').html(itemValue);
+            }
+
+            function showamount()
+            {
+                var amountValue = $('#amount').val();
+                var itemValueFormat = formatnumber(amountValue);
+                $('#showamount').html(itemValueFormat);
+            }
+
+
+        //Form submission code for expenditure DEVELOPED BY MOFEHINTOLU MUMUNI
+
+        function addExpense()
+            {   
+        let result = document.getElementById('info');
+        result.innerHTML = null;
+        var descriptionValue = $('#description').val();
+      
+        //var date_startValue = $('#date_start').val();
+        var itemValue = $('#item').val();
+        var amountValue = $('#amount').val();
+        
+        $.post('src/expenseReceive.php',
+        {amount:amountValue,
+        item :itemValue,
+        description:descriptionValue,
+        id: tag 
+        },
+        function(data){
+            $('#info').html(data);
+         
+            }
+            );
+
+         }
+
+
+
+
+        //form submission code for expenditure
+        </script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

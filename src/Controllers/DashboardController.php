@@ -2,7 +2,7 @@
 
 
 /**
- * @author Mofehintolu MUMUNI and Ogundipe Olusegun for team Eurus
+ * @author Mofehintolu MUMUNI team Eurus
  * 
  * @description Dashboard Controller that handles pulling user details to the frontend
  * 
@@ -206,12 +206,11 @@ class DashboardController extends SqlQuery{
                 {
                     $first_name = $row['first_name'];
                     $last_name = $row['last_name'];
-                    $middle_name = $row['middle_name'];
                     $user_email = $row['user_email'];
                     $registration_date = $row['registration_date'];
                 }
                 
-                $user_details_array[] = ['FIRSTNAME'=> $first_name,'LASTNAME'=>$last_name, 'MIDDLENAME'=>$middle_name, 'EMAIL'=>$user_email,'REGDATE'=>$registration_date];
+                $user_details_array[] = ['FIRSTNAME'=> $first_name,'LASTNAME'=>$last_name, 'EMAIL'=>$user_email,'REGDATE'=>$registration_date];
                 
                 if(sizeof($user_details_array) === 1)
                 {
