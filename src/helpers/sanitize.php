@@ -61,6 +61,8 @@ class sanitizer extends Datetime{
        }
             
   
+  
+  
    function sanitize_email($old_string){      
     if($old_string <= 150)
     {
@@ -83,7 +85,127 @@ class sanitizer extends Datetime{
     else return null;
     
      }
+     
+     
+     
+     
+     
+     
+   /*function sanitize_email($old_string){      
+    if($old_string <= 150)
+    {
+    $new_string = strip_tags($old_string);
+            
+    if (!filter_var($new_string, FILTER_VALIDATE_EMAIL)) 
+    {
+    return null;
+    }
+    elseif(filter_var($new_string, FILTER_VALIDATE_EMAIL)){
+    $check = explode("@", "$new_string");
+    return $new_string;
+    }
+    
+    }
+    else return null;
+    
+     }
+     */
+     
+
+     
+    function sanitize_description($string){
+        $new_string = strip_tags($string);
+        $string_length = strlen($new_string);
+        if(($string_length>1) &&($string_length<=2000)){
+            if(preg_match("/^[a-zA-Z0-9_,.!?&() ]{1,2000}$/",$new_string)){
+                
+                return $new_string;
+                
+            }
+            else{
+                
+                return null;
+            }
+            
+            
+        }
+        
+        }
+     
   
+        function sanitize_price($number){
+    
+          if((strlen($number) > 0) && (strlen($number) <= 20)){
+                 
+             $cleartag = strip_tags($number);
+    
+                if(preg_match("/^[0-9]{1,20}$/", $cleartag)) {
+              return $cleartag;
+             
+              }
+               else return null;
+           
+            }else 
+               {
+                 return null;
+               }
+              
+             }
+             
+
+
+        function sanitize_date($string){
+            $new_string = strip_tags($string);
+            $string_length = strlen($new_string);
+            if(($string_length>0) && ($string_length<=10)){
+                
+                $string_array = explode("/",$new_string);
+
+                $array_count = count($string_array);
+                if($array_count==3){
+                    //month
+                  if(preg_match("/^[0-9]{1,2}$/",$string_array[0])){
+                    
+                    //day
+                    if(preg_match("/^[0-9]{1,2}$/",$string_array[1])){
+                    
+                        //year
+                    if(preg_match("/^[0-9]{1,4}$/",$string_array[2])){
+                    
+                    return $new_string; 
+                    
+                     
+                  }
+                       
+                   else{
+                    return null;
+                }
+                    
+                   
+                  }
+                       
+                   else{
+                    return null;
+                }
+                    }
+                       
+                   else{
+                    return null;
+                }
+  
+                }
+                else{
+                    return null;
+                }
+
+            }
+            else{
+                    return null;
+                }
+            
+            }
+        
+
                 
                  
     function sanitize_password($old_string) {
@@ -169,17 +291,17 @@ class sanitizer extends Datetime{
         
        
         function convert_registration_date_to_words($registration_date){
-    $new_reg_date = $registration_date;
-    
-    $timestamp = strtotime($new_reg_date);
-    
-    $array_time = getdate($timestamp);
-    $day = $array_time['mday'];
-    $date_string = "You joined Devpoint on ".$array_time['weekday'].". ".$array_time['month']." ".$day.",  ".$array_time['year'].". Thank you for your patronage";
+        $new_reg_date = $registration_date;
+        
+        $timestamp = strtotime($new_reg_date);
+        
+        $array_time = getdate($timestamp);
+        $day = $array_time['mday'];
+        $date_string = "You joined Devpoint on ".$array_time['weekday'].". ".$array_time['month']." ".$day.",  ".$array_time['year'].". Thank you for your patronage";
 
-    return $date_string;
-   
-    }
+        return $date_string;
+    
+        }
     
    
    
@@ -201,7 +323,12 @@ class sanitizer extends Datetime{
         return $variable;
     }
    
-  
+    function format_number($number){
+        
+        $formatted_number = number_format($number);
+        return $formatted_number;
+    }
+
        function replace_string($search_value,$replace_value,$original_string)
        {
         $string = str_replace($search_value,$replace_value,$original_string);

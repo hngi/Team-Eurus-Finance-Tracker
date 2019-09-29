@@ -3,10 +3,10 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "eurus_wallet";
+$db = "eurusfinance";
 
 
-$connection = mysqli_connect('localhost','root','','eurus_wallet'); 
+$connection = mysqli_connect('localhost','root','','eurusfinance');
 
 // if($connection) {
 

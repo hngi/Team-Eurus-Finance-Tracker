@@ -26,6 +26,18 @@ class SqlQuery extends sanitizer{
       
   
 
+  function select_multiple_where_constraints($table_name,$constraints)
+  {
+  $statement = "SELECT * FROM $table_name WHERE $constraints";
+  return $statement;
+  }
+  
+  function select_multiple_where_between_constraints($table_name,$constraints)
+  {
+  $statement = "SELECT * FROM $table_name WHERE $constraints";
+  return $statement;
+  }
+  
 
             
    function single_update($table_name,$db_column_update,$update_value,$where_identifier_column,$where_identifier_value)

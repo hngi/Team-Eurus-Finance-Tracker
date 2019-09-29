@@ -216,7 +216,7 @@ tr:nth-child(even) {
 .card__side {
   height: 100%;
   cursor: pointer;
-  background: #EDEDED url(../bag.png) no-repeat;
+  background: #EDEDED url(../images/bag.png) no-repeat;
   background-position: 120% 50%;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -7448,12 +7448,12 @@ header {
   width: 100%; }
   @media (max-width: 959px) {
     header {
-      background: url(../bg-no-svg.png) no-repeat;
+      background: url(../images/bg-no-svg.png) no-repeat;
       background-size: cover; } }
   header .viewport {
     height: 100vh; }
   header .bgdiv {
-    background: url(../bgee.png) no-repeat;
+    background: url(../images/bgee.png) no-repeat;
     background-size: cover;
     height: 100vh; }
     @media (max-width: 959px) {
@@ -7637,8 +7637,9 @@ body {
               transform-origin: right; }
       .introloader .loader-container .spinner img {
         height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover; }
+        width: 300px!important;
+        -o-object-fit: contain;
+           object-fit: contain; }
 
 a:link, a:hover, a:active {
   text-decoration: none; }
@@ -7669,7 +7670,9 @@ a:link, a:hover, a:active {
   .uk-offcanvas-bar:not(.dashboard) {
     left: -450px;
     width: 450px;
-    padding: 40px; } }
+    padding: 40px; }
+  .uk-open .uk-offcanvas-bar:not(.dashboard) {
+    left: 0; } }
   @media (min-width: 960px) and (max-width: 959px) {
     .uk-offcanvas-bar:not(.dashboard) {
       left: -350px;
@@ -7733,7 +7736,7 @@ a:link, a:hover, a:active {
 #sign-up label {
   color: #181a22; }
 
-input {
+input:not([type="checkbox"], [type="radio"]) {
   border: 0 !important;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -7798,54 +7801,19 @@ textarea {
   font-size: 20px;
   color: #000; }
 
-
-.categories-header{
-  font-weight: bold;
-  font-size: 31px;
-  float: right;
-  line-height: 42px;
-}
-
-.categories-item-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  margin-top: 170px;
-}
-
-.categories-item{
-  max-width: 100%;
-  width: 300px;
-}
-
-.categories-item li{
-  border-bottom: 1px solid #929292;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 25px;
-}
-
-.categories-item li span{
-  flex: 1;
-}
-
-.categories-item ul{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.categories-item-button{
-  color: #ffffff;
-  background-color: #41836F;
-  border-radius: 25px;
-  text-align: center;
-  margin-top: 30px;
-  padding: 10px 15px;
+#img-btn{
+  padding: 0!important;
   width: 100%;
+  height: 200px;
 }
 
-.categories-item-button:focus {
-  outline:0;
+#img-btn img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.uk-input:disabled{
+  background: #c7c7c7 !important;
 }

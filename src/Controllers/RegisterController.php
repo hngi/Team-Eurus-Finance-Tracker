@@ -172,8 +172,7 @@ class RegisterController extends SqlQuery{
     *
     * @params $fname
     * @params $last_name
-    * @params $middle_name
-    * @params $email
+    *  @params $email
     * @params $password
     * 
     * @returns null
@@ -182,16 +181,15 @@ class RegisterController extends SqlQuery{
     *
     * */
     
-    function Register($fname,$last_name, $middle_name,$email,$password)
+    function Register($fname,$last_name,$email,$password)
        {
         
         $fname = $this->universal_name_sanitizer($this->trim_white_spaces_and_capitalize_firstletter_of_a_string($fname));
         $last_name = $this->universal_name_sanitizer($this->trim_white_spaces_and_capitalize_firstletter_of_a_string($last_name));
-        $middle_name = $this->universal_name_sanitizer($this->trim_white_spaces_and_capitalize_firstletter_of_a_string($middle_name));
         $email = $this->sanitize_email($this->toLowercase($email));
         $password = $this->sanitize_password($this->toLowercase($password));
         
-         if(($fname != null) && ($last_name != null) && ($middle_name != null) && ($email != null) && ($password != null))
+         if(($fname != null) && ($last_name != null)  && ($email != null) && ($password != null))
         {
           
         //hash passowrd
@@ -211,7 +209,6 @@ class RegisterController extends SqlQuery{
         
         $fname = $this->sql_escape_string($fname);
         $last_name = $this->sql_escape_string($last_name);
-        $middle_name = $this->sql_escape_string($middle_name);
         $email = $this->sql_escape_string($email);
         $password = $this->sql_escape_string($password);
         $user_id = $this->sql_escape_string($user_id);
@@ -235,7 +232,6 @@ class RegisterController extends SqlQuery{
               $column_names = "user_id, 
                               first_name,
                               last_name,
-                              middle_name,
                               password,
                               user_email,
                               registration_date";
@@ -243,7 +239,6 @@ class RegisterController extends SqlQuery{
               $insert_values = "'$user_id',
                                 '$fname',
                                 '$last_name',
-                                '$middle_name',
                                 '$password',
                                 '$email',
                                 '$reg_date'";
@@ -253,29 +248,26 @@ class RegisterController extends SqlQuery{
               
               if($exe_statement)
               {
-                $fullname = $fname." ".$middle_name." ".$last_name;
+                $fullname = $fname." ".$last_name;
 
-            //SHOW SUCCESS MESSAGE
-                echo"<script> var email_var = setInterval(function(){generate_alert('$fullname your registration was successful you can now login.', 'info', 'green');}, 1000); 
-                setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";
-
+                //SHOW SUCCESS MESSAGE
+                echo "<i style='color: green; text-align: center; background-color: #EAF9EA;'>".$fullname." your registration was successful you can now login</i>";
+             
               }
             else
             {
                  //give error message
-             echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful.', 'info', 'red');}, 1000); 
-            setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";   
-            
+            echo "<i style='color: red; text-align: center; background-color: #EAF9EA;'>Registration not successful, network error</i>";
+             
             } 
            
             
            }
         else
         {
-             //give error message
-         echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful, email already exists', 'info', 'red');}, 1000); 
-        setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";   
-            
+             //give error message  
+        echo "<i style='color: red; text-align: center; background-color: #EAF9EA;'>Registration not successful, email already exists</i>";
+                
         }
         
         
@@ -283,9 +275,37 @@ class RegisterController extends SqlQuery{
         else
         {
              //give error message
-         echo"<script> var email_var = setInterval(function(){generate_alert('Registration not successful check your inputs and retry!', 'info', 'red');}, 1000); 
-        setTimeout(function(){cancel_timed_alert('info', email_var);}, 10000);</script>";   
+             $returnString = "Error! </br>";
+
+             if($email != null)
+             {
+                 $returnString .= "Invalid email selected </br>";
+             }
+
+
+             if($fname != null)
+             {
+                 $returnString .= "Firstname must me letters only, no spaces and between 2 and 20 letters max </br>";
+           
+             }
+
+             if($last_name != null)
+             {
+                 $returnString .= "Lastname must me letters only, no spaces and between 2 and 20 letters max </br>";
+           
+             }
+
             
+          
+             if($password == null)
+             {
+              $returnString .=  "Password must contain letters and numbers only (20 characters max) </br>";
+            }
+
+
+             echo "<i style='color: red; text-align: center; background-color: #EAF9EA;'>".$returnString."</i>";
+             
+
         }
         
         }
