@@ -220,7 +220,7 @@ class DashboardController extends SqlQuery{
                 {
                      if(isset($_SESSION['ID'])){
     
-                    //destroy session and include login
+                    //destroy user session and include login
                     session_destroy();
                         }
                    return ['STATUS'=> 'FAILURE','DATA'=> []]; 
@@ -230,7 +230,7 @@ class DashboardController extends SqlQuery{
                 {
                     if(isset($_SESSION['ID'])){
     
-                    //destroy session and include login
+                    //destroy user session and include login
                     session_destroy();
                         }
                    return ['STATUS'=> 'FAILURE','DATA'=> []]; 
@@ -240,7 +240,7 @@ class DashboardController extends SqlQuery{
                 {
                     if(isset($_SESSION['ID'])){
     
-                    //destroy session and include login
+                    //destroy user session and include login
                     session_destroy();
                         }
                    return ['STATUS'=> 'FAILURE','DATA'=> []]; 
