@@ -62,20 +62,6 @@ if (isset($_SESSION['ID'])) {
                 <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
-<<<<<<< HEAD:dashboard.html~68d26695764b93b99af0804b4655d80222d3fd41
-                <div class="active">
-                    <a href="">Summary</a>
-                </div>
-                <div>
-                    <a href="">Expenditure</a>
-                </div>
-                <div>
-                    <a href="">Categories</a>
-                </div>
-                <div>
-                    <a href="">Settings</a>
-                </div>
-=======
                         <div >
                             <a href="dashboard">Summary</a>
                         </div>
@@ -88,7 +74,6 @@ if (isset($_SESSION['ID'])) {
                           <a href="search" class="active">Custom Search</a>
                          </div>
                 
->>>>>>> Mofe_backend:search.php
             </div>
         </div>
         <div>
@@ -112,105 +97,23 @@ if (isset($_SESSION['ID'])) {
             <div class="section-tours" id="section-tours">
                 <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
                     <h4 class="uk-margin-remove">
-<<<<<<< HEAD:dashboard.html~68d26695764b93b99af0804b4655d80222d3fd41
-                        Expenditure
-                    </h4>
-                    <h2 class="uk-text-bold uk-margin-remove ">
-                        Overview
-=======
 
                     </h4>
                     <h2 class="uk-text-bold uk-margin-remove ">
                         Custom Search
->>>>>>> Mofe_backend:search.php
                     </h2>
                 </div>
-                <ul class="uk-flex uk-flex-wrap uk-child-width-1-3@m uk-width-1-1@s ui-cards" uk-switcher="animation: uk-animation-fade">
-                    <li>
-                        <a class="card">
-                            <div class="card__side card__side--1">
-                                <p class="card__text card__text-1 ">This week</p>
-                                <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-1">₦1,950.00</span>
-                                </h4>
-    
-                            </div>
-    
-                        </a>
-                    </li>
-    
-                    <li>
-                        <a class="card">
-                            <div class="card__side card__side--2">
-                                <p class="card__text card__text-2">This month</p>
-                                <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-2">₦6,950.00</span>
-                                </h4>
-    
-                            </div>
-    
-                        </a>
-                    </li>
-                    <li class="">
-                        <a class="card">
-                            <div class="card__side card__side--3">
-                                <p class="card__text card__text-3">This year</p>
-                                <h4 class="card__heading">
-                                    <span class="card__heading--span card__heading--span-3">₦50,050.00</span>
-                                </h4>
-    
-                            </div>
-    
-                        </a>
-                    </li>
-                </ul>
-                <ul class="uk-switcher uk-margin">
-                    <li>
-                        <h3 class="weekbg">This Week</h3>
-                        <table class="uk-table uk-table-divider uk-table-hover">
-                            <tbody>
+                <div class="uk-height-1-1 dash-content">
+                    <div class="uk-width-1-1@s uk-overflow-auto">
+                        <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                            <thead>
                             <tr>
-                                <td>Cell & Broadband</td>
-                                <td>₦20,000.00</td>
-                            </tr>
-                            <tr>
-<<<<<<< HEAD:dashboard.html~68d26695764b93b99af0804b4655d80222d3fd41
-                                <td>Toiletries</td>
-                                <td>₦10,000.00</td>
-=======
                                 <th class="uk-width-small">S/N</th>
                                 <th>Name</th>
->>>>>>> Mofe_backend:search.php
                             </tr>
-                            <tr>
-                                <td>Utility Bills</td>
-                                <td>₦30,000.00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-    
-                        <div class="uk-margin">
-                            <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
-                    </li>
-                    <li>
-    
-                        <h3 class="monthbg">This Month</h3>
-                        <table class="uk-table uk-table-divider uk-table-hover">
+                            </thead>
                             <tbody>
                             <tr>
-<<<<<<< HEAD:dashboard.html~68d26695764b93b99af0804b4655d80222d3fd41
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-                            </tr>
-                            <tr>
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-                            </tr>
-                            <tr>
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-=======
                                 <td>1</td>
                                 <td>Carrots</td>
                             <tr>
@@ -220,44 +123,11 @@ if (isset($_SESSION['ID'])) {
                             <tr>
                                 <td>1</td>
                                 <td>Carrots</td>
->>>>>>> Mofe_backend:search.php
                             </tr>
                             </tbody>
                         </table>
 
                         <div class="uk-margin">
-<<<<<<< HEAD:dashboard.html~68d26695764b93b99af0804b4655d80222d3fd41
-                            <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
-                    </li>
-                    <li>
-    
-                        <h3 class="yearbg">This Year</h3>
-                        <table class="uk-table uk-table-divider uk-table-hover">
-                            <tbody>
-                            <tr>
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-                            </tr>
-                            <tr>
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-                            </tr>
-                            <tr>
-                                <td>Table Data</td>
-                                <td>Table Data</td>
-                            </tr>
-                            </tbody>
-                        </table>
-    
-                        <div class="uk-margin">
-                            <button class="uk-button uk-button-theme">Export to PDF</button>
-                        </div>
-                    </li>
-                </ul>
-    
-            </div>
-=======
                             <button class="uk-button uk-button-theme" uk-toggle="target: #expend">Add Category</button>
                         </div>
                     </div>
@@ -283,7 +153,6 @@ if (isset($_SESSION['ID'])) {
                     <button class="uk-button uk-button-theme uk-width-1-1@s">Add Expenditure</button>
                 </div>
             </form>
->>>>>>> Mofe_backend:search.php
         </div>
     </div>
     <div id="sidebar" uk-offcanvas="mode: reveal; overlay: true">
