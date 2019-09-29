@@ -210,7 +210,8 @@ class ExpensesController extends SqlQuery{
     
     /**
      * 
-     * @params $user_id
+     * @params $user_id may or may not be given
+     * 
      * 
      * @return array []
      * 
@@ -292,7 +293,7 @@ class ExpensesController extends SqlQuery{
         $endDateMonth = explode("-",$endDate)[1];
         $endDateYear = explode("-",$endDate)[2];
         
-        //user expenses array 
+        //user expenses array to hold user data
         $userExpensesArray = [];
         
         
@@ -310,6 +311,7 @@ class ExpensesController extends SqlQuery{
             $selectDBValues = $this->select_multiple_where_constraints($table_name,$constraints);
             $query = $this->query($selectDBValues);
             
+            //check if query waas executed
             if($query)
             {
                 while($row = $this->fetch_array($query))
@@ -376,7 +378,7 @@ class ExpensesController extends SqlQuery{
         }
         
  
-        //continue computation
+        //continue computation using core computation algorithm
         $computationFeedback = $this->expenseComputationAlgorithm($startDate,$endDate,$userExpensesArray);
        
         return $computationFeedback;
@@ -500,7 +502,16 @@ class ExpensesController extends SqlQuery{
     
     }
 
-
+    
+    /**
+     * @params $startDate
+     * @params $endDate
+     * 
+     * @params $userExpensesArray
+     * 
+     * @retruns array[]
+     * 
+     * **/
 
   function expenseComputationAlgorithm($startDate,$endDate,$userExpensesArray)
     {
