@@ -4,7 +4,7 @@ date_default_timezone_set('Africa/Lagos');
 /**
  * @author Mofehintolu MUMUNI
  * 
- * @description Register controller that handles registration
+ * @description code for dashboard
  * @slack @Bits_and_Bytes
  * @copyright 2019
  */
