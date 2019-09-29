@@ -1,17 +1,10 @@
 <?php
 session_start();
-<<<<<<< HEAD
-include "controller_dependency.php";
-//instantiate controller class and select apprioprate class
-$obj = factory::DashboardController();
-if (isset($_SESSION['ID'])){
-$userData = $obj->GetUserDetails($_SESSION['ID']);
-=======
 date_default_timezone_set('Africa/Lagos');
 /**
  * @author Mofehintolu MUMUNI
  * 
- * @description Register controller that handles registration
+ * @description code for dashboard
  * @slack @Bits_and_Bytes
  * @copyright 2019
  */
@@ -25,28 +18,20 @@ if (isset($_SESSION['ID'])){
 
 $userData = $obj->GetUserDetails($_SESSION['ID']);
 
->>>>>>> Mofe_backend
 if ($userData['STATUS'] === 'SUCCESS') {
     $firstname = $userData['DATA'][0]['FIRSTNAME'];
     $lastname = $userData['DATA'][0]['LASTNAME'];
     $email = $userData['DATA'][0]['EMAIL'];
     $regDate = $userData['DATA'][0]['REGDATE'];
-<<<<<<< HEAD
-    $fullname = $firstname . " " . $middlename . " " . $lastname;
-}
-=======
 
     $fullname = $firstname . " " . $lastname;
 }
 
->>>>>>> Mofe_backend
 if ($userData['STATUS'] === 'FAILURE') {
     //redirect to login page
     echo("<script>location.href = 'index';</script>");
     header("location: index");
 }
-<<<<<<< HEAD
-=======
 
 //instantiate controller class and select apprioprate class
 $objExpense = factory::ExpensesController();
@@ -94,7 +79,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
 }
 
 
->>>>>>> Mofe_backend
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -131,20 +115,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                 <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
-<<<<<<< HEAD
-                <div class="active">
-                    <a href="dashboard.php">Summary</a>
-                </div>
-                <div>
-                    <a href="expenditure.php">Expenditure</a>
-                </div>
-                <div>
-                    <a href="categories.php">Categories</a>
-                </div>
-                <div>
-                    <a href="settings.php">Settings</a>
-                </div>
-=======
                         <div class="active">
                             <a href="dashboard">Summary</a>
                         </div>
@@ -159,7 +129,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                 <!--<div>
                     <a href="settings.php">Settings</a>
                 </div> -->
->>>>>>> Mofe_backend
             </div>
         </div>
         <!--<div>
@@ -251,26 +220,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                 
                 <li>
                         <h3 class="weekbg">This Week</h3>
-<<<<<<< HEAD
-                        <table class="uk-table uk-table-divider uk-table-hover">
-                            <tbody>
-                            <tr>
-                                <td>Cell & Broadband</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Toiletries</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Utility Bills</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="uk-margin">
-=======
                         <?php
 
                             
@@ -334,7 +283,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                         ?>
 
                        <!--- <div class="uk-margin">
->>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div> -->
                     </li>
@@ -344,26 +292,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                     <li>
 
                         <h3 class="monthbg">This Month</h3>
-<<<<<<< HEAD
-                        <table class="uk-table uk-table-divider uk-table-hover">
-                            <tbody>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="uk-margin">
-=======
                         <p class="monthbg"><?php echo date("F",time()); ?></p>
                         <?php
 
@@ -418,33 +346,12 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
         ?>
 
                         <!--- <div class="uk-margin">
->>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div> -->
                     </li>
                     <li>
 
                         <h3 class="yearbg">This Year</h3>
-<<<<<<< HEAD
-                        <table class="uk-table uk-table-divider uk-table-hover">
-                            <tbody>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>₦0.00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="uk-margin">
-=======
                         <p class="monthbg"><?php echo date("Y",time()); ?></p>
          <?php
 
@@ -495,7 +402,6 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
             ?>
 
                         <!--- <div class="uk-margin">
->>>>>>> Mofe_backend
                             <button class="uk-button uk-button-theme">Export to PDF</button>
                         </div> -->
                     </li>
@@ -514,26 +420,11 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
                         <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="links">
-<<<<<<< HEAD
                         <div>
                             <a href="expenditure">Add Expenditure</a>
                         </div>
                         <div class="active">
                             <a href="dashboard">Summary</a>
-                        </div>
-
-                        <div>
-                            <a href="categories">Categories</a>
-                        </div>
-                        <div>
-                            <a href="settings">Settings</a>
-=======
-                        <div>
-                            <a href="expenditure">Add Expenditure</a>
-                        </div>
-                        <div class="active">
-                            <a href="dashboard">Summary</a>
->>>>>>> Mofe_backend
                         </div>
 
                         <!--  <div>
@@ -569,10 +460,7 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
 <script>
     function logout() {
         window.location = "logout";
-<<<<<<< HEAD
-=======
 
->>>>>>> Mofe_backend
     }
 </script>
 <?php

@@ -13,18 +13,10 @@ if (isset($_SESSION['ID'])) {
     if ($userData['STATUS'] === 'SUCCESS') {
         $firstname = $userData['DATA'][0]['FIRSTNAME'];
         $lastname = $userData['DATA'][0]['LASTNAME'];
-<<<<<<< HEAD
-        $middlename = $userData['DATA'][0]['MIDDLENAME'];
-        $email = $userData['DATA'][0]['EMAIL'];
-        $regDate = $userData['DATA'][0]['REGDATE'];
-
-        $fullname = $firstname . " " . $middlename . " " . $lastname;
-=======
         $email = $userData['DATA'][0]['EMAIL'];
         $regDate = $userData['DATA'][0]['REGDATE'];
 
         $fullname = $firstname . " " . $lastname;
->>>>>>> Mofe_backend
     }
 
     if ($userData['STATUS'] === 'FAILURE') {
@@ -87,20 +79,6 @@ if (isset($_SESSION['ID'])) {
                 <img src="./assets/images/logo.svg" alt="">
             </div>
             <div class="links">
-<<<<<<< HEAD
-                <div>
-                    <a href="dashboard.php">Summary</a>
-                </div>
-                <div class="active">
-                    <a href="expenditure.php">Expenditure</a>
-                </div>
-                <div>
-                    <a href="categories.php">Categories</a>
-                </div>
-                <div>
-                    <a href="settings.php">Settings</a>
-                </div>
-=======
             <div >
                 <a href="dashboard">Summary</a>
             </div>
@@ -108,7 +86,6 @@ if (isset($_SESSION['ID'])) {
                 <a href="expenditure">Add Expenditure</a>
             </div>
           
->>>>>>> Mofe_backend
             </div>
         </div>
         <div>
@@ -178,11 +155,7 @@ if (isset($_SESSION['ID'])) {
                             </tbody>
                       
                         </table>
-<<<<<<< HEAD
-
-=======
                    
->>>>>>> Mofe_backend
                         <div class="uk-margin">
                             <button class="uk-button uk-button-theme" uk-toggle="target: #expend">Add Expenditure</button>
                         </div>
@@ -196,17 +169,11 @@ if (isset($_SESSION['ID'])) {
 
             <button class="uk-modal-close-default" type="button" uk-close></button>
 
-<<<<<<< HEAD
-            <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l">
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="euname">ITEM</label>
-=======
             <!--- <form class="uk-form-stacked uk-width-1-1@s uk-child-width-1-1@l" action="expenditure" method="POST"> --->
             <div  id="info">
             </div>    
             <div class="uk-margin">
                     <label class="uk-form-label" for="item">ITEM</label>
->>>>>>> Mofe_backend
                     <div class="uk-form-controls">
                         <input class="uk-input" oninput="showitem()" style="color: black;" name="item" id="item" type="text" placeholder="Add item">
                     </div>
@@ -217,10 +184,7 @@ if (isset($_SESSION['ID'])) {
                         <input class="uk-input" oninput="showamount()"  name="amount" step="1" min="1" max="10000000000000000000" style="color: black;" id="amount" type="number" placeholder="Add amount">
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
               
->>>>>>> Mofe_backend
 
                 <div class="uk-margin">
                     <label class="uk-form-label" for="description">DESCRIPTION</label>
@@ -234,8 +198,6 @@ if (isset($_SESSION['ID'])) {
                     </div>
                 </div>
 
-<<<<<<< HEAD
-=======
                <!--- <div class="uk-margin">
                     <label class="uk-form-label" for="datepicker" >DATE</label>
                     <div class="uk-form-controls">
@@ -244,7 +206,6 @@ if (isset($_SESSION['ID'])) {
                 </div>  --->
 
              
->>>>>>> Mofe_backend
                 <div class="uk-margin">
                     <input class="uk-button uk-button-theme uk-width-1-1@s" type="submit" onclick="addExpense();" name="add" value="Add Expenditure">
                 </div>
@@ -261,20 +222,6 @@ if (isset($_SESSION['ID'])) {
                         <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="links">
-<<<<<<< HEAD
-                        <div>
-                            <a href="dashboard.php">Summary</a>
-                        </div>
-                        <div class="active">
-                            <a href="expenditure.php">Expenditure</a>
-                        </div>
-                        <div>
-                            <a href="categories.php">Categories</a>
-                        </div>
-                        <div>
-                            <a href="settings.php">Settings</a>
-                        </div>
-=======
                     <div >
                         <a href="dashboard">Summary</a>
                     </div>
@@ -282,7 +229,6 @@ if (isset($_SESSION['ID'])) {
                         <a href="expenditure">Add Expenditure</a>
                     </div>
  
->>>>>>> Mofe_backend
                     </div>
                 </div>
                 <div>
