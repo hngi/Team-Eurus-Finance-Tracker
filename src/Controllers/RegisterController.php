@@ -202,7 +202,7 @@ class RegisterController extends SqlQuery{
             
         $user_id = $unique_ref_for_user_id;
         
-        //get_reg date 
+        //get_reg date in day-month-year format
         $reg_date = $this->registration_date($timestap);
         
         //escape variables to prevent sql injection
@@ -246,6 +246,7 @@ class RegisterController extends SqlQuery{
               $insert_statement = $this->insert($table_name,$column_names,$insert_values);
               $exe_statement = $this->query($insert_statement);
               
+              //check if query was executed
               if($exe_statement)
               {
                 $fullname = $fname." ".$last_name;
