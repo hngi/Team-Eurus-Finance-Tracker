@@ -221,7 +221,18 @@ if(!isset($_SESSION['ID'])){
                         <div class="uk-form-controls">
                              <input type="password" class="uk-input" style="color: black; border: 1px solid #000"   
                     name="password" id = "pswrd" oninput="passWord()" placeholder="Enter your Password"/>
-                    <small style="color: black;" ><p id="validPasswrd"></p></small>
+                    <small style="color: black;" ><p id="validPasswrd"></p></small><br>
+                    <input type="checkbox" onclick="myfunction()">Show Password
+                        <script>
+                            function myfuntion() {
+                                var x = document.getElementById("myInput");
+                                if (x.type === "password") {
+                                    x.type = "text";
+                                } else {
+                                        x.type = "password";
+                                }
+                            }
+                        </script>
                         </div>
                     </div>
               
@@ -230,7 +241,18 @@ if(!isset($_SESSION['ID'])){
                         <div class="uk-form-controls">
                             <input type="password" class="uk-input" style="color: black; border: 1px solid #000"   
                     name="passwordConfirm" id = "pswrdConf" oninput="passWordConfirm()" placeholder="Confirm your Password"/>
-                    <small style="color: black;" ><p id="validPasswrdConfirm"></p></small>
+                    <small style="color: black;" ><p id="validPasswrdConfirm"></p></small><br>
+                    <input type="checkbox" onclick="myfunction()">Show Password
+                        <script>
+                            function myfuntion() {
+                                var x = document.getElementById("myInput");
+                                if (x.type === "password") {
+                                    x.type = "text";
+                                } else {
+                                        x.type = "password";
+                                }
+                            }
+                        </script>
                         </div>
                     </div>
                     
