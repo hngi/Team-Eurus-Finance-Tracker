@@ -56,25 +56,7 @@
                     echo "<i style='color: red; text-align: center; background-color: #EAF9EA;'>".$returnString."</i>";
                 
                 }
-                //Email Registration Done By Oluwafunmilola | Olulawlah//
-            funtion send_mail($firstname,$lastname,$email,$password) {
-                $from='Admin <admin@mofehintolumumuni.com>';
-                $headers ='';
-                $headers .= "From: $from\n";
-                $headers .= "Reply-to: $from\n";
-                $headers .= "Return-Path: $from\n";
-                $headers .= "Message-ID: <" . md5(uniquid(time())) . "@" . $_SERVER['SERVER_NAME'] . ">\n";
-                $headers .= "Date: " . date('r', time()) . "\n";
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
-
-                $subject = "Welcome!";
-                $message = "
-                <p></p><br>
-                Hi ".$firstname. "<br> Thank you for downloading Eurus Finance Tracker App. Your username is your ".$email." and your password : ".$password. "<br><br>";
-
-                mail($email,$subject,$message,$headers);
-            }
+               
         ?>
 
   

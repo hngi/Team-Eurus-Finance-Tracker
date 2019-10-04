@@ -29,7 +29,7 @@ include"Controllers/DashboardController.php";
 
 include"Controllers/ExpensesController.php";
 
-
+include"Controllers/PasswordResetController.php";
 class factory{
  
  
