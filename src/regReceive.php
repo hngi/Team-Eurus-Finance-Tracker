@@ -57,8 +57,8 @@
                 
                 }
                 //Email Registration Done By Oluwafunmilola | Olulawlah//
-            funtion send_mail($firstname,$lastname,$email,$password) {
-                $from='Admin <admin@mofehintolumumuni.com>';
+            function send_mail($firstname,$lastname,$email,$password) {
+                $from = 'Admin <admin@mofehintolumumuni.com>';
                 $headers ='';
                 $headers .= "From: $from\n";
                 $headers .= "Reply-to: $from\n";
