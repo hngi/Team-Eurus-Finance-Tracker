@@ -8,7 +8,7 @@
   </head>
   <body>
             <nav class="navbar sticky-top navbar-light bg-light navbar-expand-lg scrolling-navbar justify-content-between">
-                    <a class="navbar-brand" href="#"><img src="https://res.cloudinary.com/dy18y8k1e/image/upload/v1568757822/Logo_sfirbx.png" class="mg"></a>
+                 
                     <button class="btn btn-primary btn-sm my-0" onclick="logout()" id="logout">Logout</button>
             </nav>
         
@@ -16,7 +16,7 @@
             <div class="container d-flex flex-column justify-content-center align-items-center">
                 <div class="row wow fadeIn devp jumbotron bg-light">
                     <div class="col-md-12 text-center align-items-center">
-                        <div class="pic"><img src="https://res.cloudinary.com/dy18y8k1e/image/upload/v1568757798/Welcome_festivity_kvftvk.png"class="img"></div>
+                     
                         <h1 class="display-4 font-weight-bold mb-0 pt-md-5 pt-5 ">404 | <span class="txt">PAGE NOT FOUND!</span></h1>
                         <button class="btn btn-primary btn-sm my-0" onclick="back()" id="back">HOME</button>
 
@@ -32,6 +32,11 @@
   function back()
   {
     window.location = "index";
+        
+  }
+  function logout()
+  {
+    window.location = "logout";
         
   }
   </script>
