@@ -287,7 +287,7 @@ if(!isset($_SESSION['ID'])){
                      <div class ="inline">
                         <input type="checkbox" name="terms"  id="terms" value="Accpeted" class="checkbox"/>
                         <small class="tandc" style="color: black;" >By signing I agree to
-                            <a href ="#">Terms and Conditions</a></small>
+                            <a href ="termsAndConditions.html">Terms and Conditions</a></small>
                        </div>
                     
                    
