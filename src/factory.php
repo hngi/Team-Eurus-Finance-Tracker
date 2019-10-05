@@ -29,6 +29,9 @@ include"Controllers/DashboardController.php";
 
 include"Controllers/ExpensesController.php";
 
+include"Controllers/BudgetController.php";
+
+
 
 class factory{
  
@@ -55,7 +58,11 @@ class factory{
  {
     return new ExpensesController;
  }
-    
+ 
+ public static function BudgetController()
+ {
+    return new BudgetController;
+ }
 
  }
  
