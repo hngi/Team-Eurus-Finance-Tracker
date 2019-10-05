@@ -17,53 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
 <body>
 <!--Preloader-->
-<div id="introLoader" class="introloader">
-    <div class="loader-container">
-        <div class="spinner">
-            <img src="assets/images/logo.svg" alt="">
-        </div>
-    </div>
-</div>
-<div id="particles-js" class="uk-position-fixed" hidden></div>
 <section class="uk-flex">
-    <a href="#" class="menu-toggle" uk-icon="icon: menu; ratio: 2" uk-toggle="target: #sidebar"></a>
-    <div class="sidebar">
-        <div>
-            <div class="logo">
-                <img src="./assets/images/logo.svg" alt="">
-            </div>
-            <div class="links">
-                <div>
-                    <a href="dashboard.php">Summary</a>
-                </div>
-                <div>
-                    <a href="expenditure.php">Expenditure</a>
-                </div>
-                <div class="active">
-                    <a href="categories.php">Categories</a>
-                </div>
-                <div>
-                    <a href="settings.php">Settings</a>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="avatar-details">
-                <div class="avatar">
-                    <img src="./assets/images/avatar.png" alt="">
-                </div>
-                <div class="details">
-                    <h3 class="uk-text-bold"><?php echo $fullname; ?></h3>
-                </div>
-            </div>
-            <div class="links logout">
-                <div>
-                    <a href="logout">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui uk-padding-small">
+    <div class="ui uk-padding-large">
         <div class="ui_main">
             <div class="section-tours" id="section-tours">
                 <div class="uk-width-1-1@s uk-flex uk-flex-between uk-flex-bottom titles">
@@ -161,48 +116,6 @@
                             <h3>Contacting us</h3>
                             <p>If you would like to contact us to understand more about this Agreement or wish to contact us concerning any matter relating to it, you may do so via the contact form
                                 This document was last updated on October 2, 2019</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sidebar" uk-offcanvas="mode: reveal; overlay: true">
-        <div class="uk-offcanvas-bar dashboard">
-
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <div class="canvas">
-                <div>
-                    <div class="logo">
-                        <img src="./assets/images/logo.svg" alt="">
-                    </div>
-                    <div class="links">
-                        <div>
-                            <a href="dashboard.php">Summary</a>
-                        </div>
-                        <div>
-                            <a href="expenditure.php">Expenditure</a>
-                        </div>
-                        <div class="active">
-                            <a href="categories.php">Categories</a>
-                        </div>
-                        <div>
-                            <a href="settings.php">Settings</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="avatar-details">
-                        <div class="avatar">
-                            <img src="./assets/images/avatar.png" alt="">
-                        </div>
-                        <div class="details">
-                            <h3 class="uk-text-bold"><?php echo $fullname; ?></h3>
-                        </div>
-                    </div>
-                    <div class="links logout">
-                        <div>
-                            <a href="logout">Logout</a>
                         </div>
                     </div>
                 </div>
