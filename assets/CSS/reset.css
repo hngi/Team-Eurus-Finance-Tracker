@@ -1,0 +1,40 @@
+body {
+    background: #4a6e34;
+    font-size: 1.1em;
+    font-family: sans-serif
+}
+
+a {
+    text decoration: none
+}
+
+form {
+    width: 25%;
+    margin: 70px auto;
+    background: lightgreen;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+h2.form-title {
+    text-align: center;
+}
+
+form button {
+    width: 100%;
+    border: none;
+    color: lightgreen;
+    background: #4a6e34;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.msg {
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid green;
+    background: green;
+    text-align: left;
+    color: lightgreen;
+    padding: 10px;
+}

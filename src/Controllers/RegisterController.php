@@ -251,6 +251,26 @@ class RegisterController extends SqlQuery{
               {
                 $fullname = $fname." ".$last_name;
 
+                   //Email Registration Done By Oluwafunmilola | Olulawlah//
+            funtion send_mail($fname,$last_name,$email,$password) {
+              $from='Admin <admin@localhost.com>';
+              $headers ='';
+              $headers .= "From: $from\n";
+              $headers .= "Reply-to: $from\n";
+              $headers .= "Return-Path: $from\n";
+              $headers .= "Message-ID: <" . md5(uniquid(time())) . "@" . $_SERVER['SERVER_NAME'] . ">\n";
+              $headers .= "Date: " . date('r', time()) . "\n";
+              $headers = "MIME-Version: 1.0" . "\r\n";
+              $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
+
+              $subject = "Welcome!";
+              $message = "
+              <p></p><br>
+              Hi ".$fname. "<br> Thank you for downloading Eurus Finance Tracker App. Your username is your ".$email." and your password : ".$password. "<br><br>";
+
+              mail($email,$subject,$message,$headers);
+          }
+
                 //SHOW SUCCESS MESSAGE
                 echo "<i style='color: green; text-align: center; background-color: #EAF9EA;'>".$fullname." your registration was successful you can now login</i>";
              

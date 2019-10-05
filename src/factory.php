@@ -29,7 +29,11 @@ include"Controllers/DashboardController.php";
 
 include"Controllers/ExpensesController.php";
 
+
+include"Controllers/PasswordResetController.php";
+
 include"Controllers/BudgetController.php";
+
 
 
 
@@ -58,6 +62,11 @@ class factory{
  {
     return new ExpensesController;
  }
+  
+  public static function PasswordResetController()
+ {
+    return new PasswordResetController;
+    
  
  public static function BudgetController()
  {
@@ -67,6 +76,5 @@ class factory{
  }
  
  
-
 
 ?>
