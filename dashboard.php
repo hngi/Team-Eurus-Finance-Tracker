@@ -400,6 +400,43 @@ if((count($yearlyExpensesArray[0]['USER_DATA']) > 0) && (is_array($yearlyExpense
             </table>';
         }
             ?>
+        <!--section for select date-->
+        <section>
+                
+                <div class="row ml-1 period">
+                    <p>Specify Period</p>
+                </div>
+                <div class="row ml-1">
+                    <form class="form-inline col-md-12">
+                        <div class="form-group col-md-4">
+                            <label class="mr-1 medium">Start Date</label>
+                            <input required="" type="date" name="startDate" id="startDate" class="form-control mr-5 specify" value="2019-10-01">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="mr-1 medium">End Date</label>
+                            <input required="" type="date" name="endDate" id="endDate" class="form-control mr-5 specify" value="2019-10-03">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <button type="submit" class="btn form-control specifyBtn pl-5 pr-5 specify mb-1">Generate</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row ml-1 mt-3">
+                    <table class="table transTable col-sm-12">
+                        <thead>
+                            <tr>
+                                <th>Transaction Date</th>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                
+                        </tbody>
+                    </table>
+                </div>
+                            </section>
 
                         <!--- <div class="uk-margin">
                             <button class="uk-button uk-button-theme">Export to PDF</button>
