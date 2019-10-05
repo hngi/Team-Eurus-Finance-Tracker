@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact</title>
+        <script type="text/javascript" src = "validation.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        
+    </head>
+        <body>
+            <form method="POST" id = "regForm" name="regForm" onsubmit = "return validateForm()" action = "contact.php">
+                    <div class="container">
+                        <h1>Contact Us </h1>
+                        <p class="text-center">Please use this form to submit your feedback.
+                            We look forward to receiving your message.
+                        </p>
+                        <input type="text" name="name"  class="text" placeholder="Enter your Name" id="name">
+                        <input type="email" name="email" class="text" placeholder="Enter your Email" id="email">
+                        <input type="text" name="title"  class="text" placeholder="Your Title here" id="title">
+                        <textarea name="message1" id="message1" cols="30" rows="4" class="text" placeholder="Your Message"></textarea>
+                        <br>
+                        <input type="submit"  class="button" name="submit_btn" value="Submit" id="submit">
+                        <a href="dashboard.html">Back</a>
+                    </div>
+            </form>
+    </body>
+</html>
