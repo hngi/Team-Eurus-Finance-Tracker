@@ -35,3 +35,21 @@
       KEY `compute_index` (`month`,`day`,`user_id`),
       KEY `compute_index_one` (`year`,`date`)
     ) 
+
+
+    CREATE TABLE `budgets` (
+      `rowid` int(255) NOT NULL AUTO_INCREMENT,
+      `user_id` varchar(225) NOT NULL,
+      `amount` varchar(255) NOT NULL,
+      `type` varchar(255) NOT NULL,
+      `weekly_start_date` varchar(255) NOT NULL,
+      `weekly_end_date` varchar(255) NOT NULL,
+      `month` varchar(255) NOT NULL,
+      `year` varchar(255) NOT NULL,
+
+    
+      PRIMARY KEY (`rowid`),
+      KEY `compute_index` (`month`,`user_id`),
+      KEY `compute_index_one` (`year`,`type`),
+      KEY `date_index` (`weekly_start_date`,`weekly_end_date`)
+    ) 
